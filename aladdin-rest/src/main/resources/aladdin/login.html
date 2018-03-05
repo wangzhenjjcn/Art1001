@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<script src="js/jquery-1.12.1.min.js" charset="utf-8"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/module/core/main.js" charset="utf-8"></script>
+<script src="js/module/user/login.js" charset="utf-8"></script>
+<script>
+    if($.cookie(user_cookie_access_token)){
+        location.href = "index.html";
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/common.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/login.css" charset="utf-8"/>
+</head>
+<body>
+<div class="login_box">
+    <h2><img src="images/logo111.png" alt=""></h2>
+
+    <form>
+        <h3>
+            <input id="username" class="user b_radius" type="text" placeholder="请输入您的账号" />
+        </h3>
+        <h3>
+            <input id="password" class="password b_radius" type="password" placeholder="请输入账号密码" />
+        </h3>
+        <h4>
+            <a id="submit_btn" class="b_radius" href="#">登录</a>
+        </h4>
+        <div class="register"><img src="images/login/register.png" alt=""><a href="#">创建新账号</a></div>
+        <h5>
+            <p class="p1">
+                <span></span><a href="#">记住密码</a>
+            </p>
+            <p class="p2"><a href="#">忘记密码？</a></p>
+        </h5>
+    </form>
+    
+    <h5><a href="http://localhost:8090/aladdin/index.html">index</a></h5>
+    
+    <h6 id="footer">
+        @ 2016 阿拉丁
+    </h6>
+</div>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+
+<script>
+    function getBrowserInfo()
+    {
+        var agent = navigator.userAgent.toLowerCase() ;
+
+        var regStr_ie = /msie [\d.]+;/gi ;
+        var regStr_ff = /firefox\/[\d.]+/gi
+        var regStr_chrome = /chrome\/[\d.]+/gi ;
+        var regStr_saf = /safari\/[\d.]+/gi ;
+//IE
+        if(agent.indexOf("msie") > 0)
+        {
+            return agent.match(regStr_ie) ;
+        }
+
+//firefox
+        if(agent.indexOf("firefox") > 0)
+        {
+            return agent.match(regStr_ff) ;
+        }
+
+//Chrome
+        if(agent.indexOf("chrome") > 0)
+        {
+            return agent.match(regStr_chrome) ;
+        }
+
+//Safari
+        if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+        {
+            return agent.match(regStr_saf) ;
+        }
+
+    }
+
+    var browser = getBrowserInfo() ;
+
+    $("#footer").html(" @ 2016 阿拉丁 浏览器:"+browser);
+
+</script>
+</body>
+</html>

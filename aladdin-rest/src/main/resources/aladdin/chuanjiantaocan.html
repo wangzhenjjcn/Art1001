@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIM</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<h4>创建套餐</h4>
+<hr>
+<div class="row overauto">
+
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+    	<label class="col-md-2 col-sm-2 control-label">套餐规则：</label>
+			<div class="col-md-10 col-sm-10" id="series_con">
+                <script id="series_tpl" type="text/juicer">
+                    <select id="rule" class="form-control"  >
+                        <option value="">未选择</option>
+                        {@each data as series}
+                            <option value="${series.id}">${series.name}</option>
+                        {@/each}
+		            </select>
+                </script>
+            </div>
+    </div>
+	<div class="form-group">
+		<label for="inputName" class="col-md-2 col-sm-2 control-label">套餐名称：</label>
+	<div class="col-md-10 col-sm-10">
+			<input type="name" class="form-control" id="inputName" 
+				   placeholder="请输入套餐名称">
+		</div>
+	</div>
+    <div class="form-group">
+    	<label class="col-md-2 col-sm-2 control-label">套餐风格：</label>
+		<div class="col-md-10 col-sm-10">
+		    <select id="styles" class="form-control"  >
+			    <option>中式</option>
+			    <option>日式</option>
+			    <option>美式</option>
+			    <option>欧式</option>
+			    <option></option>
+		</select>
+        </div>
+   </div>
+            <div class="form-group">
+    	<label class="col-md-2 col-sm-2 control-label">套餐单价：</label>
+			<div class="col-md-10 col-sm-10">
+		<select id="prices" class="form-control"  >
+			<option>￥1199/㎡</option>
+			<option>￥1299/㎡</option>
+			<option>￥1599/㎡</option>
+			<option>￥1799/㎡</option>
+		</select>
+        </div>
+        </div>
+         <div class="form-group">
+    	<label class="col-md-2 col-sm-2 control-label">套餐面积：</label>
+			<div class="col-md-10 col-sm-10">
+		         <select id="area" class="form-control"  >
+			        <option>80-120㎡</option>
+			        <option>120㎡以上</option>
+		        </select>
+        </div>
+        </div>
+        <div class="form-group">
+    	<label class="col-md-2 col-sm-2 control-label">效果图：</label>
+			<div class="col-md-10 col-sm-10">
+                <button type="button" class="btn btn-primary ">
+                    <span class="glyphicon glyphicon-open"></span> 上传效果图
+                </button>
+                <input style="width: 100%;height: 34px;opacity:0;margin-top:-34px;" class="upPic" type="file" id="uploadfile" name="files"/>
+                <input type="hidden" name="xg_pic" value="">
+                <span class="pull-right">支持格式：.JPG/.DEG</span>
+            </div>
+
+        </div>
+        <div class="col-md-2 col-sm-2"></div>
+ <div class="col-md-10 col-sm-10"><div class="well well-lg text-center txyl">
+     <!--图形预览-->
+     <img src="images/aladdin.png" style="width: 80%;height:100px;padding:0;border: none;background: #0080cc;" id="up_pic" src="" alt=""/>
+ </div></div>
+ 
+ 
+<div class="form-group"><label class="col-md-2 col-sm-2 control-label">区域效果：</label>
+<div class="col-md-10 col-sm-10">
+ <div class="row" id="zones_con">
+     <script id="zones_tpl" type="text/juicer">
+     {@each zones as zone,index}
+         <div class="col-xs-3 col-md-3 qyxg">
+             <p class="text-center" zoneId="${zone.id}">${zone.name}</p>
+             <a style="position: relative;width: 100%;height: 70px;display: block;float:left;" href="javascript:void(0);" class="thumbnail">
+                <span style="width: 100%;height: 100%;display: block;float:left;">
+                    <img style="width: 100%;height: 100%;" src="images/housingType/house_pic.png" alt=""/>
+                </span>
+                 <input id="zone_${index}"  style="background:#f00;z-index:9;position:absolute;left:0;top:0;width:127px;height:70px;opacity:0;" type="file"/>
+                 <input type="hidden" value=""/>
+             </a>
+         </div>
+     {@/each}
+     </script>
+ </div>
+
+</div>
+</div>
+
+
+</form>
+
+
+    <div class="row text-center" ><button onclick="update_btn()" type="button" class="btn upload01">&nbsp;&nbsp;上&nbsp;传&nbsp;&nbsp;</button>
+
+
+ <button type="button" onclick="cancel_btn()" class="btn btn-default upload">&nbsp;&nbsp;取&nbsp;消&nbsp;&nbsp;</button>
+ </div>
+
+
+</div>
+
+</div>
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/module/core/main.js" charset="utf-8"></script>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+<script src="js/module/core/user.js" charset="utf-8"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/ajaxfileupload.js"></script>
+
+
+
+<script>
+    var $token=getUserToken();
+    var $series_tpl=document.getElementById("series_tpl").innerHTML;
+    var $zones_tpl=document.getElementById("zones_tpl").innerHTML;
+    //判断是否可以上传数据 表单验证是否通过
+    var isForm = false;
+
+    $(function(){
+        $(document).on('change',':file',function(){
+            var cur_id=$(this).attr('id');
+            uploadpic(cur_id);
+        });
+        //规则列表赋值
+        initseries();
+        //区域效果 模块赋值
+//        var data={"zones":[{"id":"living_dining_room","name":"客餐厅"},{"id":"living_dining_room","name":"客餐厅_1"}]};
+//        load_zones(data);
+    });
+
+
+    //区域效果 模块赋值
+    function load_zones(zones){
+        zones = my_eval(zones);
+        var html=juicer($zones_tpl,zones);
+        $("#zones_con").html(html);
+    }
+
+    //规则列表赋值
+    function initseries(){
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": server_url+"/api/v1/series/all?access_token="+$token,
+            "method": "POST",
+            "headers": {
+                "content-type": "application/x-www-form-urlencoded"
+            }
+        }
+        $.ajax(settings).done(function (response) {
+
+            if(response.code=="200"){
+                var html=juicer($series_tpl,response);
+                $("#series_con").html(html);
+            }else{
+                alert("套餐规则信息获取失败");
+            }
+        });
+    }
+
+    //上传图片
+    function uploadpic(id){
+//        var form = new FormData();
+//        form.append("files",$('#'+id)[0].files[0]);
+
+        var url = upload_file_url;
+//        $.fn.myupload(url,form,getUserToken(),function(response){
+//            response=eval('('+response+')');
+//            if(response.code==200){
+//                var url=response.url;
+//                $('#'+id).parent().find(":hidden").val(url);
+//                if(id=='uploadfile'){
+//                    $('#up_pic').attr('src',url);
+//                }else{
+//                    $('#'+id).parent('a').find('img').attr('src',url);
+//                }
+//            }else{
+//                alert('上传失败');
+//            }
+//        });
+
+        $.fn.singleupload(url,id,getUserToken(),function(response){
+            response=my_eval(response);
+            if(response.code==200){
+                var url=response.url;
+                $('#'+id).parent().find(":hidden").val(url);
+                if(id=='uploadfile'){
+                    $('#up_pic').attr('src',url);
+                }else{
+                    $('#'+id).parent('a').find('img').attr('src',url);
+                }
+            }else{
+                alert('上传失败');
+            }
+        });
+
+    }
+
+    //获取数据
+    function getData(skp,json){
+        //初始化isForm
+        isForm = false;
+
+        var series=$('#rule option:selected').val();//套餐规则
+        var name=$('#inputName').val(); //套餐名称
+        var style=$('#styles option:selected').text(); //套餐风格
+        var unitprice=$('#prices option:selected').text().match(/\d+/g)[0];//套餐单价
+        var area=$('#area option:selected').text(); //套餐面积
+
+        //数据验证
+        if( series == "" ){
+            isForm = true;
+            alert("请选择套餐规则")
+        }
+        if($.trim(name) == "" ){
+            isForm = true;
+            alert("请输入套餐名称")
+        }
+
+
+        var effect=$(':hidden[name=xg_pic]').val();
+
+        var zones="[";
+
+        $("#zones_con .qyxg").each(function(i,e){
+            var curZonid=$(e).children("p").attr("zoneid");
+            var curZonname=$(e).children("p").text();
+            var curImg=$(e).find(":hidden").val();
+            zones+='{"zoneId":"'+curZonid+'","zoneName":"'+curZonname+'","img":"'+curImg+'"},';
+        });
+
+        if(zones=='['){
+            zones="";
+        }else{
+            zones=zones.substr(0,zones.length-1)+']';
+        }
+
+
+
+        var data={
+            "series":series,
+            "name":name,
+            "style":style,
+            "unitprice":unitprice,
+            "area":area,
+            "effect":effect,
+            "zones":zones,
+            "skp":skp,
+            "json":json
+        };
+        return data;
+
+    }
+
+
+
+    function cancel_btn(){
+        ART.Sketchup.callback("Window.close");
+    }
+    //添加套餐接口
+
+    function update_btn(){
+
+        var formData = getData("","");
+
+        if(isForm){
+            return false;
+        }
+        skp_upload_taocan_file();
+//        var response = '{"code":200, "msg":"SUCCESS", "skp":"http://art1001.oss-cn-shanghai.aliyuncs.com/d058de63-a5b3-42b9-b140-7dbbc5b8857a.skp", "png":"http://art1001.oss-cn-shanghai.aliyuncs.com/dbfcdea0-8aaa-4ba3-b42d-05a83b80b829.json"}';
+//        upload_callback(response);
+
+    }
+
+
+
+    function upload_callback(response){
+
+        var thumbId = "";
+        var skpId = "";
+
+        if(response){
+            var data = eval('(' + response + ')');
+            var code = data.code;
+            if(code==200){
+                if(data.skp!=""){
+                    skpId = data.skp;
+                }
+                if(data.png!=""){
+                    thumbId = data.png;
+                }
+            }
+        }
+
+        var formData = getData(skpId,thumbId);
+
+        var url = packages_save_url;
+        $.fn.mypost(url,formData,getUserToken(),function(response){
+            response=my_eval(response);
+            if(response.code==200){
+                alert("上传成功!");
+                setTimeout(function () {
+                    ART.Sketchup.callback("Window.close");
+                }, 2000);
+            }else{
+                alert('上传失败');
+            }
+        });
+    }
+</script>
+</body>
+</html>

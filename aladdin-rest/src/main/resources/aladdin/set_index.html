@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置页</title>
+    <link rel="stylesheet" href="css/common.css" charset="utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="css/set.css" charset="utf-8"/>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/juicer-min.js"></script>
+    <script src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/intDOM.js" charset="utf-8"></script>
+    <script src="js/module/core/main.js" charset="utf-8"></script>
+    <script src="js/module/skp/core.js" charset="utf-8"></script>
+    <script src="js/module/skp/skp.js" charset="utf-8"></script>
+    <script src="js/module/core/user.js" charset="utf-8"></script>
+    <script src="js/ajaxfileupload.js"></script>
+    <script src="js/area.js" charset="utf-8"></script>
+    <script src="plugin/laydate/laydate.js" charset="utf-8"></script>
+</head>
+<body>
+<script id="cityoption" type="text/juicer">
+    {@each data as d,index}
+     <option value="${d.code}">${d.name}</option>
+    {@/each}
+</script>
+<div class="set_index_box container-fluid">
+    <ul>
+        <li class="my_info">
+            我的资料
+            <span></span>
+        </li>
+        <li class="update_password">
+            修改密码
+            <span></span>
+        </li>
+        <li class="adout_alad">
+            关于阿拉丁
+            <span></span>
+        </li>
+    </ul>
+
+    <div class="quit_login"><a href="javascript:void(0);">退出登录</a></div>
+    
+</div>
+<!-- mark-->
+    <div class="set_mark"></div>
+    <!--弹框我的资料查看-->
+
+
+    <div style="display: none;" class="bombInfo_check bomb_position" id="_user_show">
+        <h2><em></em>我的资料<span>编辑</span></h2>
+        <dl>
+            <dt><img src="images/set_pic.png" alt="" sid="_user_pic"/></dt>
+            <dd sid="_user_name"></dd>
+        </dl>
+        <p style="margin-top: 10px;"><span>姓&nbsp;&nbsp;&nbsp;名 :</span><span sid="_user_tname"></span></p>
+        <p><span>性&nbsp;&nbsp;&nbsp;别 :</span><span sid="_user_sex">女</span></p>
+        <p><span>生&nbsp;&nbsp;&nbsp;日 :</span><span sid="_user_birthday">2016-12-25</span></p>
+        <p><span>手机号 :</span><span sid="_user_mobile"></span></p>
+        <p><span>地&nbsp;&nbsp;&nbsp;区 :</span><span sid="_user_location"></span></p>
+    </div>
+    <!-- 弹框我的资料查看结束-->
+    <!-- 弹框我的资料编辑开始-->
+    <div style="display: none;" class="bombInfo_editor bomb_position" id="_user_editor">
+        <h2><em></em>我的资料<span>完成</span></h2>
+        <dl>
+            <dt>
+                <img class="m_avater1" src="images/set_pic.png" alt="" id="e_user_show"/>
+                <input type="file"  name="files" id="headImgfile" 
+                style="position:relative;top: -59px;z-index:100;display:block;width:60px;height:60px;opacity: 0.0;"/>
+                <span></span>
+            </dt>
+            <dd class="" sid="_user_name"></dd>
+            <input name="avater" type="hidden" sid="_user_pic" id="_user_pic"/>
+        </dl>
+        <p>
+            <label class="name" for="">姓 名 :</label>
+            <input id="dimname" placeholder="" type="text" name="name" sid="_user_tname"/>
+        </p>
+        <p>
+            <label for="">性 别 :</label>
+            <label for="sex1" style="width:20px">男</label><input id="sex1" style="width:30px;float:left" type="radio" value="1" name="sex"/>
+            <label for="sex2" style="width:20px">女</label><input id="sex2" style="width:30px" type="radio" value="2" name="sex"/>
+        </p>
+        <p>
+            <label for="">生 日 :</label>
+            <input placeholder="2016-12-25" type="text" name="birthday" id="_birthday" sid="_user_birthday" class="laydate-icon" />
+        </p>
+        <p>
+            <label for="">手机号:</label>
+            <input id="phone" placeholder="您的手机号" type="text" name="mobile" sid="_user_mobile"/>
+        </p>
+        <p>
+            <label class="address" for="">地 区 :</label>
+            <select id="sheng" sid="area">
+                <option value="山西">山西</option>
+                <option value="原平">江西</option>
+                <option value="大同">上海</option>
+            </select >
+            <select id="shi" sid="area">
+                <option value="山西">马天宇</option>
+                <option value="原平">薛之谦</option>
+                <option value="大同">邓紫棋</option>
+            </select>
+            <select id="qu" sid="area">
+                <option value="山西">上饶</option>
+                <option value="原平">原平</option>
+                <option value="大同">大同</option>
+            </select>
+        </p>
+    </div>
+    <!-- 弹框我的资料编辑结束-->
+    <!-- 弹框修改密码开始-->
+    <div style="display: none;" class="bombMack_password bomb_position">
+        <h2><em></em>修改密码</h2>
+        <dl>
+            <dt><img class="m_avater2" src="images/set_pic.png" alt=""/></dt>
+            <dd class="m_name2"></dd>
+        </dl>
+        <p style="margin-top:15px;">
+            <label for="">原&nbsp;&nbsp;密 码</label>
+            <input placeholder="请输入原密码" type="password" name="oldpwd"/>
+        </p>
+        <p>
+            <label for="">新&nbsp;&nbsp;密 码</label>
+            <input placeholder="密码长度0-20个字符" type="password" name="newpwd"/>
+        </p>
+        <p>
+            <label for="">确认密码</label>
+            <input placeholder="请再次输入新密码" type="password" name="newpwd_copy"/>
+        </p>
+        <h3>
+            <a class="submit_btn" href="javascript:void(0);">提交</a>
+            <a class="go_back" href="javascript:void(0);">返回</a>
+        </h3>
+    </div>
+    <!-- 弹框修改密码结束-->
+    <!-- 关于阿拉丁开始-->
+    <div style="display: none;" class="bombAbout_us bomb_position">
+        <h2><em></em>关于阿拉丁</h2>
+        <p></p>
+        <p></p>
+    </div>
+    <!-- 关于阿拉丁结束-->
+    <!-- 退出登录开始-->
+    <div style="display: none;" class="bombLogin bomb_position">
+        <h2><em></em>退出</h2>
+        <dl>
+            <dt><img class="m_avater4" src="images/set_pic.png" alt=""/></dt>
+            <dd class="m_name4"></dd>
+        </dl>
+        <p style="margin-top: 20px;">退出登录将无法使用工具!</p>
+        <p>您确定退出登录吗？</p>
+        <h4>
+            <a class="yes_btn" href="javascript:void(0);">确定</a>
+            <a class="go_back" href="javascript:void(0);">返回</a>
+        </h4>
+    </div>
+    <!-- 退出登录结束-->
+<script>
+$(function(){
+//    我的资料
+    $('.my_info').on('click',function(){
+        $('.set_mark').css('display','block');
+        $('.bombInfo_check').css('display','block');
+        loadUserInfo();
+       
+    });
+    $('.bombInfo_check h2').on('click','span',function(){
+        $('.bombInfo_check').css('display','none');
+        $('.bombInfo_editor').css('display','block');
+    });
+    $('.bombInfo_editor h2').on('click','span',function(){
+        submitUserInfo();
+    });
+    $('.bomb_position h2').on('click','em',function(){
+        $('.bombInfo_check').css('display','none');
+        $('.bombInfo_editor').css('display','none');
+        $('.bombMack_password').css('display','none');
+        $('.bombAbout_us').css('display','none');
+        $('.bombLogin').css('display','none');
+        $('.set_mark').css('display','none');
+    });
+    //修改密码
+    $('.update_password').on('click',function(){
+        $('.set_mark').css('display','block');
+        $('.bombMack_password').css('display','block');
+    });
+    $('.go_back').on('click',function(){
+        $('.bombMack_password').css('display','none');
+        $('.bombLogin').css('display','none');
+        $('.set_mark').css('display','none');
+    });
+    $('.submit_btn').on('click',function(){
+        var oldpwd=$("[name=oldpwd]").val();
+        var newpwd=$("[name=newpwd]").val();
+        var newpwd_copy=$("[name=newpwd_copy]").val();
+        if(oldpwd=="" || newpwd=="" ||newpwd_copy==""){
+            alert("请输入密码");
+            return false;
+        }
+        if(newpwd != newpwd_copy){
+            alert("两次新密码输入不一致");
+            return false;
+        }
+        var data={"oldpwd":oldpwd,"newpwd":newpwd};
+        $.fn.mypost(user_update_pwd,data,getUserToken(),function(response){
+            if(response.code=='200'){
+                alert("密码修改成功");
+
+                $('.bombMack_password').css('display','none');
+                $('.bombLogin').css('display','none');
+                $('.set_mark').css('display','none');
+            }
+        })
+    });
+
+//    关于我们
+    $('.adout_alad').on('click',function(){
+        $('.set_mark').css('display','block');
+        $('.bombAbout_us').css('display','block');
+    });
+//    退出登录
+    $('.quit_login').on('click',function(){
+        $('.bombLogin').css('display','block');
+    });
+    $('.yes_btn').on('click',function(){
+        $.removeCookie(user_cookie_access_token);
+        $.removeCookie(user_info_cookie_name);
+        $.removeCookie(user_cookie_name);
+
+        $.removeCookie(member_name);
+        $.removeCookie(member_avater);
+
+        location.reload();
+    });
+    //绑定上传事件
+    $('#headImgfile').on('change',function(){
+            uploadpic();
+    });
+    laydate({
+      elem: '#_birthday', //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+      event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+    });
+});
+/*获取用户信息*/
+function loadUserInfo(){
+    var obj = {};
+    var url = userinfo_url;
+    $.fn.mypost(url,obj,getUserToken(),function(response){
+        //console.log(response);
+        response = my_eval(response);
+        var code = response.code;
+        var dom = $('#_user_show');
+        var editorDom = $('#_user_editor');
+        if (code == 200) {
+            //头像
+            if(response.avater){
+             dom.find("[sid=_user_pic]").attr("src",response.avater);
+             editorDom.find("[sid=_user_pic]").attr("src",response.avater);
+            }
+            //姓名
+            if(response.name){
+             dom.find("[sid=_user_name]").text(response.name);
+             editorDom.find("[sid=_user_name]").text(response.name);
+            }
+            if(response.truename){
+             dom.find("[sid=_user_tname]").text(response.truename);
+             editorDom.find("[sid=_user_tname]").val(response.truename);
+            }
+            //性别
+            if(response.sex){
+             dom.find("[sid=_user_sex]").text(response.sex);
+             if(response.sex==1||response.sex=='男'){
+                $("#sex1").attr("checked",true);
+             }else{
+                $("#sex2").attr("checked",true);
+             }
+            }
+            //生日
+            if(response.birthday){
+             dom.find("[sid=_user_birthday]").text(response.birthday.split(" ")[0]);
+             editorDom.find("[sid=_user_birthday]").val(response.birthday.split(" ")[0]);
+            }
+            //手机号
+            if(response.mobile){
+             dom.find("[sid=_user_mobile]").text(response.mobile);
+              editorDom.find("[sid=_user_mobile]").val(response.mobile);
+            }           
+            //地区
+            if(response.location){
+             dom.find("[sid=_user_location]").text(response.location);
+            }
+            if(response.locationIds){
+             /* var ids = response.locationIds.split(","); *///response.locationIds.split(",");
+             loadCitys(0,"sheng",function(){
+                $("#sheng").val(response.locationId1);
+             });
+             loadCitys(response.locationId1,"shi",function(){
+                $("#shi").val(response.locationId2);
+             });
+             loadCitys(response.locationId2,"qu",function(){
+                $("#qu").val(response.locationId);
+             });
+            }
+        } else {
+            alert("服务器错误，请稍后重试");
+        }
+    });
+
+}
+
+/*提交用户信息*/
+function submitUserInfo(){
+    var obj = {};
+    var url = userinfo_submit_url;
+    var dom = $('#_user_editor');
+        //姓名
+         // obj.name = dom.find("[sid=_user_name]").val();
+         obj.truename = dom.find("[sid=_user_tname]").val();
+        //性别
+         obj.sex = dom.find("input:radio[name=sex]:checked").val();
+        //生日
+         obj.birthday = dom.find("[sid=_user_birthday]").val();
+         if(obj.birthday)
+            obj.birthday =  new Date(Date.parse(obj.birthday.replace(/-/g,"/"))).getTime();
+
+        obj.mobile = dom.find("[sid=_user_mobile]").val();
+        //地区
+        obj.locationIds = $.trim($("#sheng").val())+","+$.trim($("#shi").val())+","+$.trim($("#qu").val());
+        obj.location = 
+        $("#sheng").find("option:selected").text()+
+        $("#shi").find("option:selected").text()+
+        $("#qu").find("option:selected").text();
+       
+        var msg = hasEmpty(obj);
+        if(msg){
+            return alert(msg);
+        }
+        var option = 
+        {
+            mobile:{reg:/^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/,msg:"手机号格式不正确"}
+           /* name:{reg:/^[A-Za-z0-9]{6,40}$/,msg:"用户名不能低于6个字符"}*/
+        }
+        var msg = check(obj,option);
+        if(msg){
+            return alert(msg);
+        }
+        //头像
+        obj.avater = dom.find("[sid=_user_pic]").val();
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            if(response&&response.code=="200"){
+                alert("提交成功！");
+                $('.bombInfo_editor').css('display','none');
+                $('.set_mark').css('display','none');
+            }
+        });
+    }
+    function hasEmpty(obj){
+        for(var i in obj){
+            if (!obj[i]) {
+                return i+"不能为空!";
+            }
+        }
+    }
+    function check(obj,opt){
+        for(var i in obj){
+            for(var j in opt){
+                if(i==j&&!opt[j].reg.test(obj[i])){
+                    return opt[j].msg;
+                }
+            }
+        }
+    }
+    //上传文件
+    function uploadpic(){
+            var url = upload_file_url;
+            $.fn.singleupload(url,'headImgfile',getUserToken(),function(response){
+                response = my_eval(response);
+                if(response.code==200){
+                    $('#_user_pic').val(response.url);
+                    $('#e_user_show').attr('src',response.url);
+                }else{
+                    alert('上传失败');
+                }
+            });
+    }
+    $(document).ready(function(){ 
+    	intDOM();
+    	}); 
+</script>
+</body>
+</html>

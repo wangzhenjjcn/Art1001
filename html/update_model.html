@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传我的模型</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/upload_model.css" charset="utf-8"/>
+</head>
+<body>
+<div class="upload_model">
+    <div class="load_header">上传我的模型</div>
+    <h1>选择区域</h1>
+    <div class="area_choose">
+        <p zonename="客餐厅"><img src="images/modelType_manager/area_icon1.png" alt=""/></p>
+
+        <p zonename="主卧"><img src="images/modelType_manager/area_icon2.png" alt=""/></p>
+
+        <p zonename="次卧"><img src="images/modelType_manager/area_icon3.png" alt=""/></p>
+
+        <p zonename="厨房"><img src="images/modelType_manager/area_icon4.png" alt=""/></p>
+
+        <p zonename="卫生间"><img src="images/modelType_manager/area_icon5.png" alt=""/></p>
+
+        <p zonename="阳台"><img src="images/modelType_manager/area_icon6.png" alt=""/></p>
+    </div>
+    <h1>设置模型属性</h1>
+    <div style="padding-bottom:20px;" class="set_model">
+        <input type="hidden" name="m_brand" value=""/>
+        <div id="brand_m_tpl" class="fenLei">
+            <script id="brand_tpl" type="text/juicer">
+             <em value="">品牌</em>
+                <ul class="oneHeight nav1 clearfix">
+                        <li onclick="selectBrand(0)">
+                            <span>全部</span>
+                        </li>
+                    {@each data as it,index}
+                        <li value="${it.brand_name}" onclick="selectBrand('${it.brand_id}')">
+                            <span>${it.brand_name}</span>
+                        </li>
+                    {@/each}
+                </ul>
+            </script>
+        </div>
+        <div class="fenLei" name="style">
+            <em value="">风格</em>
+            <ul id="a1" class="oneHeight nav1 clearfix">
+                <li ><span value="中式">中式</span></li>
+                <li ><span value="日式">日式</span></li>
+                <li ><span value="美式">美式</span></li>
+                <li ><span value="欧式">欧式</span></li>
+                <li ><span value="混搭">混搭</span></li>
+                <li ><span value="现代">现代</span></li>
+                <li ><span value="古典">古典</span></li>
+                <li ><span value="田园">田园</span></li>
+                <li ><span value="地中海">地中海</span></li>
+            </ul>
+        </div>
+        <div class="fenLei" name="color">
+            <em value="">色系</em>
+            <ul id="a2" class="oneHeight nav1 clearfix">
+                <li ><span value="深色">深色</span></li>
+                <li ><span value="中性">中性</span></li>
+                <li ><span value="浅色">浅色</span></li>
+            </ul>
+        </div>
+        <div class="fenLei" name="type">
+            <em value="">模型类型</em>
+            <ul id="a3" class="oneHeight nav1 clearfix">
+                <li ><span value="none">无</span></li>
+                <li ><span value="normal">普通家具</span></li>
+                <li ><span value="wardrobe">衣柜</span></li>
+                <li ><span value="skirting_board">踢脚截面</span></li>
+                <li ><span value="3d_double_door">双开门</span></li>
+                <li ><span value="3d_normal_door">普通门</span></li>
+                <li ><span value="3d_sliding_door">移动门</span></li>
+                <li ><span value="3d_zmm_out_door">子母门套</span></li>
+                <li ><span value="3d_double_out_door">双开门套</span></li>
+                <li ><span value="3d_single_out_door">单开门套</span></li>
+                <li ><span value="gypsum_line">天花线脚</span></li>
+            </ul>
+        </div>
+        <div class="fenLei" name="material">
+            <em value="">材质类型</em>
+            <ul id="a4" class="oneHeight nav1 clearfix">
+                <li ><span value="none">无</span></li>
+                <li ><span value="wall">壁纸</span></li>
+                <li ><span value="floor">地板</span></li>
+                <li ><span value="top">吊顶</span></li>
+            </ul>
+        </div>
+        <div class="fenLei" name="stage">
+            <em value="">阶段</em>
+            <ul id="a5" class="oneHeight nav1 clearfix">
+                <li ><span value="前期">前期</span></li>
+                <li ><span value="水电">水电</span></li>
+                <li ><span value="油漆">油漆</span></li>
+                <li ><span value="泥瓦">泥瓦</span></li>
+                <li ><span value="验收">验收</span></li>
+            </ul>
+        </div>
+        <div class="fenLei" name="category">
+            <em value="">工程分类</em>
+            <ul id="a6" class="oneHeight nav1 clearfix">
+                <li><span  value="天棚工程">天棚工程</span></li>
+                <li ><span value="地面工程">地面工程</span></li>
+                <li><span  value="墙面工程">墙面工程</span></li>
+                <li ><span value="安装">安装</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="property_cont">
+        <h3>
+            <label for="">名称 : </label>
+            <input name="name" class="radius" type="text"/>
+        </h3>
+        <h2>
+            <label for="">长度 : </label>
+            <input name="length" class="radius" type="text"/>
+            <span>cm</span>
+        </h2>
+        <h2>
+            <label for="">宽度 : </label>
+            <input name="width" class="radius" type="text"/>
+            <span>cm</span>
+        </h2>
+        <h2>
+            <label for="">高度 : </label>
+            <input name="height" class="radius" type="text"/>
+            <span>cm</span>
+        </h2>
+        <h3>
+            <label for="">型号 : </label>
+            <input name="modelnumber" class="radius" type="text"/>
+        </h3>
+        <h2>
+            <label for="">重量 : </label>
+            <input name="weight" class="radius" type="text"/>
+            <span>kg</span>
+        </h2>
+        <h4>
+            <label for="">单位 : </label>
+            <select class="radius" name="unit">
+                <option value="个">个</option>
+                <option value="支">支</option>
+                <option value="台">台</option>
+                <option value="块">块</option>
+            </select>
+        </h4>
+       <h2>
+            <label for="">价格 : </label>
+            <input name="unitprice" class="radius" type="text"/>
+            <span>元</span>
+        </h2>
+        <h5>
+            <p>
+                <label for="">尺寸 : </label>
+                <input name="modelSize" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">材质 : </label>
+                <input name="modelMaterial" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">人工费 : </label>
+                <input name="unitpriceMan" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">材料费 : </label>
+                <input name="unitpriceMaterial" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">搬运费 : </label>
+                <input name="transportExpenses" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">安装费 : </label>
+                <input name="installExpenses" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">损耗费 : </label>
+                <input name="wastageRate" class="radius" type="text"/>
+            </p>
+
+            <p>
+                <label for="">备注 : </label>
+                <input name="description" class="radius" type="text"/>
+            </p>
+
+             <p>
+                 <label for="">输出类型 : </label>
+                 <select class="radius" name="exportType">
+                    <option value="construction">施工</option>
+                    <option value="auxiliary_material">辅材</option>
+                    <option value="main_material">主材</option>
+                 </select>
+                 <!--<input class="radius" type="text"/>-->
+             </p>
+             <div>
+                 <h6 name="autoApply">
+                     <em>是否自动应用</em>
+                     <span class="checking" v="1">是</span>
+                     <span v="0">否</span>
+                 </h6>
+             </div>
+         </h5>
+         <!-- <h6 name="autoApply">
+             <em>是否自动应用</em>
+             <span class="checking" v="1">是</span>
+             <span v="0">否</span>
+         </h6> -->
+    </div>
+    <div class="handle_btn">
+        <p>
+            <input class="reset" type="reset" value="取消"/>
+            <input class="submit" type="submit" value="提交"/>
+        </p>
+    </div>
+</div>
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/module/core/main.js"></script>
+<script src="js/module/core/user.js"></script>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+
+
+<script>
+
+    var $accessToken=getUserToken();//令牌
+
+    var $accessibility=0;//表示模型私有
+
+    $(function(){
+
+        //是否自动应用单选
+        $('.property_cont h6').on('click','span',function(){
+            $(this).parent().find('span').removeClass('checking');
+            $(this).addClass('checking');
+        });
+
+        //选择区域
+        $('.area_choose').on('click','p',function(){
+//            $(this).siblings().removeClass('check');
+            if($(this).hasClass('check')){
+                $(this).removeClass('check')
+            }else{
+                $(this).addClass('check')
+            }
+        });
+
+        //是否自动应用单选
+        $('.property_cont h6').on('click', 'span', function () {
+            $(this).parent().find('span').removeClass('checking');
+            $(this).addClass('checking');
+        });
+
+        $('.submit').on('click',function(){
+            subinfo();
+        });
+
+
+        $('.reset').on('click',function(){
+            ART.Sketchup.callback("Window.close")
+        });
+
+        //点击分类菜单
+        $('.set_model').on('mouseenter', '.fenLei', function () {
+            $(this).find('.nav1').show();
+        }).on("mouseleave", '.fenLei', function () {
+            $(".nav1").hide();
+        });
+
+        //显示二级
+        $(document).on('mouseenter', '.set_model .nav1>li', function () {
+            $(this).addClass('active_li').siblings().removeClass('active_li');
+            $(this).siblings().find('ul').hide();
+            $(this).children('ul').show();
+        }).on("mouseleave", '.set_model .nav1>li', function () {
+            $(this).children('ul').hide();
+            $(this).removeClass('active_li');
+        });
+
+        //显示三级
+        $(document).on('mouseenter', '.set_model .nav1>li li', function () {
+            $(this).addClass('active_li').siblings().removeClass('active_li');
+            $(this).siblings().find('ul').hide();
+            $(this).children('ul').show();
+        });
+        loadBrand();
+    });
+    //点击
+    $(document).on('click','.oneHeight li', function (e) {
+        e.stopPropagation();
+        var text = $(this).children('span').text();
+//            console.log(text);
+		var value = $(this).children('span').attr("value");
+        var parentDom = $(this).parents('.fenLei');
+//            console.log( parentDom.children('em').text() )
+//            console.log( parentDom.attr('id') )
+        parentDom.children('em').text( text );
+        parentDom.children('em').attr("value",value);
+        $(':hidden[name=m_cat]').val(text);
+        $(".nav1").hide();
+    });
+
+    //加载品牌
+    function loadBrand() {
+        var barnd_tpl = document.getElementById('brand_tpl').innerHTML;
+        var obj = {};
+        var url = brand_list_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            var code = response.code;
+            if (code == 200) {
+                var tpl_html = juicer(barnd_tpl, response);//模板赋值
+                $("#brand_m_tpl").empty();
+                $("#brand_m_tpl").html(tpl_html);
+
+            } else {
+                alert("服务器错误，请稍后重试");
+            }
+        });
+    }
+
+    function selectBrand(id) {
+        $(":hidden[name=m_brand]").val(id);
+    }
+
+    /*添加模型数据*/
+    function subinfo(){
+
+        //验证表单
+        if(verifydata()==false){
+            return false;
+        }
+        skp_upload_my_model_file();
+    }
+
+
+    //sketch-up回调
+    function upload_callback(response){
+
+        var thumbId = "";
+        var skpId = "";
+
+        if(response){
+            var data = my_eval(response);
+            var code = data.code;
+            if(code==200){
+                if(data.skp!=""){
+                    skpId = data.skp;
+                }
+                if(data.png!=""){
+                    thumbId = data.png;
+                }
+            }
+        }
+
+        var data=modeldata(thumbId,skpId);
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": server_url+"/api/models/single/upload?access_token="+$accessToken,
+            "method": "POST",
+//            "headers": {
+//                "access_token": $accessToken,
+//                "content-type": "application/x-www-form-urlencoded"
+//            },
+            "data": data
+        }
+
+        $.ajax(settings).done(function (response) {
+
+            if(response.code==200) {
+                alert("上传成功!");
+                setTimeout(function () {
+                    ART.Sketchup.callback("Window.close");
+                }, 2000);
+            }else
+            {
+                alert("服务器错误，请稍后重试");
+            }
+
+        });
+
+    }
+
+    //获取模型相关数据
+    var modeldata=function(thumbId,skpId){
+
+        var modelFunctions="";//区域
+        $(".area_choose p").each(function(){
+            if($(this).hasClass('check')){
+                modelFunctions+=$(this).attr('zonename')+',';
+            }
+        });
+        if(modelFunctions!=''){
+            modelFunctions=modelFunctions.substr(0,modelFunctions.length-1);
+        }
+        var brand=$(":hidden[name=m_brand]").val();//品牌
+        var style=$(".set_model [name=style] em").attr("value");//风格
+        var color=$(".set_model [name=color] em").attr("value");//色系
+        var type=$(".set_model [name=type] em").attr("value");//模型类型
+        var material=$(".set_model [name=material] em").attr("value");//材质类型
+        var stage=$(".set_model [name=stage] em").attr("value");//阶段
+        var category=$(".set_model [name=category] em").attr("value");//模型分类
+        if(material!="none"){
+            type = "none";
+        }
+        var name=$('[name="name"]').val();
+        var length=$('[name="length"]').val();
+        var width=$('[name="width"]').val();
+        var height=$('[name="height"]').val();
+        var modelnumber=$('[name="modelnumber"]').val();
+        var weight=$('[name="weight"]').val();
+        var unit=$('[name="unit"] option:selected').val();
+        var description=$('[name="description"]').val();
+
+        var modelSize=$('[name="modelSize"]').val();
+        var modelMaterial=$('[name="modelMaterial"]').val();
+        var unitpriceMan=$('[name="unitpriceMan"]').val();
+        var unitpriceMaterial=$('[name="unitpriceMaterial"]').val();
+        var transportExpenses=$('[name="transportExpenses"]').val();
+        var installExpenses=$('[name="installExpenses"]').val();
+        var wastageRate=$('[name="wastageRate"]').val();
+        var unitprice=$('[name="unitprice"]').val();
+        var exportType=$('[name="exportType"] option:selected').val();
+        var autoApply=$('[name="autoApply"] .checking').attr('v');
+
+        var data={
+            "brand":brand,
+            "modelFunctions":modelFunctions,
+            "style":style,
+            "color":color,
+            "type":type,
+            "material":material,
+            "stage":stage,
+            "category":category,
+            "modelSize":modelSize,
+            "modelMaterial":modelMaterial,
+            "unitpriceMan":unitpriceMan,
+            "unitpriceMaterial":unitpriceMaterial,
+            "transportExpenses":transportExpenses,
+            "installExpenses":installExpenses,
+            "wastageRate":wastageRate,
+            "unitprice":unitprice,
+            "exportType":exportType,
+            "autoApply":autoApply,
+            "thumbId":thumbId,
+            "skpId":skpId,
+            "accessibility":$accessibility,
+
+            "name":name,
+            "length":length,
+            "width":width,
+            "height":height,
+            "modelnumber":modelnumber,
+            "weight":weight,
+            "unit":unit,
+            "description":description
+        }
+        return data;
+
+    }
+
+
+    //验证表单数据
+    function verifydata(){
+        var data=modeldata("","");
+        if(data.brand==""){
+            alert("请选择品牌");
+            return false;
+        }
+        if(data.modelFunctions==""){
+            alert("请选择区域");
+            return false;
+        }
+        if(data.style=="风格"){
+            alert("请选择风格");
+            return false;
+        }
+        if(data.color=="色系"){
+            alert("请选择色系");
+            return false;
+        }
+        if(data.type=="模型类型"){
+            alert("请选择模型类型");
+            return false;
+        }
+        if(data.material=="材质类型"){
+            alert("请选择材质类型");
+            return false;
+        }
+        if(data.stage=="阶段"){
+            alert("请选择阶段");
+            return false;
+        }
+        if(data.category=="工程分类"){
+            alert("请选择工程分类");
+            return false;
+        }
+        if(data.modelSize==""){
+            alert("尺寸不能为空");
+            return false;
+        }
+        if(data.modelMaterial==""){
+            alert("材质不能为空");
+            return false;
+        }
+        if(data.unitpriceMan==""){
+            alert("人工费不能为空");
+            return false;
+        }
+        if(data.unitpriceMaterial==""){
+            alert("材料费不能为空");
+            return false;
+        }
+        if(data.transportExpenses==""){
+            alert("搬运费不能为空");
+            return false;
+        }
+        if(data.installExpenses==""){
+            alert("安装费不能为空");
+            return false;
+        }
+        if(data.wastageRate==""){
+            alert("损耗费不能为空");
+            return false;
+        }
+        if(data.unitprice==""){
+            alert("单价不能为空");
+            return false;
+        }
+//        if(data.exportType==""){
+//            alert("输出类型不能为空");
+//            return false;
+//        }
+        if(data.name==""){
+            alert("请输入模型名称");
+            return false;
+        }
+        if(data.length==""){
+            alert("请输入长度");
+            return false;
+        }
+        if(data.width==""){
+            alert("请输入宽度");
+            return false;
+        }
+        if(data.height==""){
+            alert("请输入高度");
+            return false;
+        }
+        if(data.modelnumber==""){
+            alert("请输入型号");
+            return false;
+        }
+        if(data.weight==""){
+            alert("请输入重量");
+            return false;
+        }
+        if(data.unit==""){
+            alert("请输入单位");
+            return false;
+        }
+        var reg_int=/^[1-9]\d*|0$/;
+        var reg_double=/^([1-9]\d*|0)(.\d+)?$/
+
+        var reg=/^([1-9]\d*|0)(.\d{1,2})?$/;
+
+        if(!(reg_int.test(data.weight))){
+            alert("模型重量是整形");
+            return false;
+        }
+
+        if(!(reg_double.test(data.length))){
+            alert("请输入正确的长度");
+            return false;
+        }
+        if(!(reg_double.test(data.width))){
+            alert("请输入正确的宽度");
+            return false;
+        }
+        if(!(reg_double.test(data.height))){
+            alert("请输入正确的高度");
+            return false;
+        }
+
+        if(!(reg.test(data.unitpriceMan))){
+            alert("请输入正确的人工费");
+            return false;
+        }
+        if(!(reg.test(data.unitpriceMaterial))){
+            alert("请输入正确的材料费");
+            return false;
+        }
+        if(!(reg.test(data.transportExpenses))){
+            alert("请输入正确的搬运费");
+            return false;
+        }
+        if(!(reg.test(data.installExpenses))){
+            alert("请输入正确的安装费");
+            return false;
+        }
+        if(!(reg.test(data.wastageRate))){
+            alert("请输入正确的损耗费");
+            return false;
+        }
+        if(!(reg.test(data.unitprice))){
+            alert("请输入正确的单价");
+            return false;
+        }
+        return true;
+
+    }
+
+</script>
+</body>
+</html>

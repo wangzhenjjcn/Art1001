@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑户型</title>
+    <link rel="stylesheet" href="css/common.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/update_houseType.css" charset="utf-8"/>
+</head>
+<body>
+<div class="update_houseType">
+    <div class="update_header">
+        编辑户型
+    </div>
+    <div class="update_content">
+        <form action="" method="post" id="forms">
+            <p>
+                <label for="">楼盘名称 : </label>
+                <input id="housename" value="" class="radius" type="text"/>
+            </p>
+            <p>
+                <label for="">户型名称 : </label>
+                <input id="name" value="" class="radius" type="text"/>
+            </p>
+            <p>
+                <label for="">面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积 : </label>
+                <input id="area" value="" class="area_w radius" type="text"/>
+                <span>m²</span>
+            </p>
+            <p>
+                <label for="">房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型 : </label>
+                <select name="data-selected-cate-id" id="rooms" class="radius">
+                    <option value="1">一居</option>
+                    <option value="2">二居</option>
+                    <option value="3">三居</option>
+                    <option value="4">四居</option>
+                    <option value="5">五居</option>
+                    <option value="6">其他</option>
+                </select>
+            </p>
+            <h3>
+                <label for="">楼盘区域 : </label>
+                <select id="sheng" class="radius" sid="area">
+                    <option value="北京市">北京市</option>
+                    <option value="北京市1">北京市1</option>
+                    <option value="北京市2">北京市2</option>
+                </select>
+                <select id="shi" class="radius" sid="area">
+                    <option value="昌平区">昌平区</option>
+                    <option value="昌平区1">昌平区1</option>
+                    <option value="昌平区2">昌平区2</option>
+                </select>
+                <select id="qu" class="radius" sid="area">
+                    <option value="立水桥">立水桥</option>
+                    <option value="立水桥1">立水桥1</option>
+                    <option value="立水桥2">立水桥2</option>
+                </select>
+            </h3>
+            <h4>
+                <label for="">上传文件 : </label>
+                <input class="upPic" name="files" type="file" id="uploadfile"/>
+                <a class="radius" href="javascript:void(0)">上传参考图</a>
+                <input type="hidden" id="uploadUri" value="">
+            </h4>
+            <h5><img src="" alt="" id="up_pic"/></h5>
+            <h6>
+                <a class="away_btn" href="#">取消</a>
+                <a class="finish_btn" href="#">完成</a>
+            </h6>
+        </form>
+    </div>
+</div>
+<script id="cityoption" type="text/juicer">
+	{@each data as d,index}
+	 <option value="${d.code}">${d.name}</option>
+	{@/each}
+</script>
+
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/module/core/main.js"></script>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+<script src="js/module/core/user.js"></script>
+<script src="js/ajaxfileupload.js"></script>
+<script src="js/area.js"></script>
+
+<script>
+
+    var $accessToken=$.cookie(user_cookie_access_token);
+
+    var urlinfo= window.location.search;
+
+    var $id=urlinfo.substring(urlinfo.lastIndexOf("=")+1);
+
+    //地区下拉变量
+    $(function(){
+        initData();//初始化数据
+        //提交信息
+        $('.finish_btn').on('click',function(){
+            subinfo();
+        });
+        //绑定上传事件
+        $('.upPic').on('change',function(){
+            uploadpic();
+        });
+        //取消编辑事件
+        $('.away_btn').on('click',function(){
+            skp_window_close();
+        });
+      
+    });
+
+    //初始化数据
+    function initData() {
+
+        var url = server_url + "/api/housetypes/get/" + $id;
+
+        $.ajaxSetup({cache:false});
+        $.fn.mypost(url, {}, getUserToken(), function (response) {
+
+                    $('#housename').val(response.communityName);
+                    $('#name').val(response.name);
+                    $('#area').val(response.area);
+                    $('#rooms').val(response.houseTypeId);
+                    $('#uploadUri').val(response.uploadUri);
+                   /*  var pid = response.locationId;
+                    var arrid = new Array();
+                    arrid = pid.split(","); */
+                    $("#sheng").val(response.locationId1||0);
+                    $("#shi").val(response.locationId2||0);
+                    $("#qu").val(response.locationId||0);
+                    //$('#attachmenturi').val(response.attachmenturi);
+                    $('#up_pic').attr('src', response.uploadUri);
+                }
+        )
+
+    }
+
+    //提交信息
+    function subinfo(){
+
+        //验证
+        if(verifyinfo()==false){
+            return false;
+        }
+        skp_upload_houseType_file();
+//        var response = '{"code":200, "msg":"SUCCESS", "skp":"http://art1001.oss-cn-shanghai.aliyuncs.com/d058de63-a5b3-42b9-b140-7dbbc5b8857a.skp", "png":"http://art1001.oss-cn-shanghai.aliyuncs.com/dbfcdea0-8aaa-4ba3-b42d-05a83b80b829.png"}';
+//        upload_callback(response);
+    }
+
+    function upload_callback(response){
+        var attachmenturi = "";
+        var attachmenturi_png = "";
+
+        if(response){
+            var data = eval('(' + response + ')');
+            var code = data.code;
+            if(code==200){
+                if(data.skp!=""){
+                    attachmenturi = data.skp;
+                }
+                if(data.png!=""){
+                    attachmenturi_png = data.png;
+                }
+            }
+        }
+
+        var communityName=$('#housename').val();//楼盘名称
+        var name=$('#name').val();//户型名称
+        var area=$('#area').val();//面积
+        var rooms=$('#rooms option:selected').val();//房型
+        var uploadUri=$('#uploadUri').val();//图片
+        //区域
+        var sheng=$('#sheng').find('option:selected').val();
+        var shi=$('#shi').find('option:selected').val();
+        var qu=$('#qu').find('option:selected').val();
+        var shengtext=$('#sheng').find('option:selected').text();
+        var shitext=$('#shi').find('option:selected').text();
+        var qutext=$('#qu').find('option:selected').text();
+        var locationId=sheng+','+shi+','+qu;
+        var location=shengtext+shitext+qutext;
+
+        var data={
+            "communityName":communityName,
+            "name":name,
+            "houseTypeId":rooms,
+            "attachmenturi":attachmenturi,
+            "housePicUri":attachmenturi_png,
+            "uploadUri":uploadUri,
+            "area":area,
+            "locationId":locationId,
+            "location":location
+        };
+
+        var url=houseType_edit_url+$id;
+
+        $.fn.mypost(url, data, getUserToken(), function (response) {
+                  if(response.code==200) {
+                        alert("编辑户型成功!");
+                        setTimeout(function () {
+                            ART.Sketchup.callback("Window.close");
+                        }, 2000);
+                    }else
+                    {
+                        alert("服务器错误，请稍后重试");
+                    }
+                }
+        )
+    }
+
+    //上传文件
+    function uploadpic(){
+        var url = upload_file_url;
+        $.fn.singleupload(url,'uploadfile',getUserToken(),function(response){
+            response = my_eval(response);
+            if(response.code==200){
+                $('#uploadUri').val(response.url);
+                $('#up_pic').attr('src',response.url);
+            }else{
+                alert('上传失败');
+            }
+        });
+    }
+
+    function verifyinfo(){
+        var communityName=$('#housename').val();//楼盘名称
+        var name=$('#name').val();//户型名称
+        var area=$('#area').val();//面积
+        var rooms=$('#rooms').val();//房型
+        //var uploadUri=$('#uploadUri').val();//用户上传的图片
+
+        //区域
+        var sheng=$('#sheng').val();
+        var shi=$('#shi').val();
+        var qu=$('#qu').val();
+
+        if(communityName==''){
+            alert('楼盘名称不能为空');
+            return false;
+        }
+        if(name==''){
+            alert('户型名称不能为空');
+            return false;
+        }
+        if(area==''){
+            alert('面积不能为空');
+            return false;
+        }
+        var reg=/^([1-9]\d*|0)(.\d+)?$/;
+        if(!(reg.test(area))){
+            alert('面积只能是整形或浮点型');
+            return false;
+        }
+        if(rooms==''){
+            alert('请选择房型');
+            return false;
+        }
+        if(sheng==''||shi==''|qu==''){
+            alert('请选择户型地址');
+            return false;
+        }
+        return true;
+
+    }
+
+</script>
+</body>
+</html>

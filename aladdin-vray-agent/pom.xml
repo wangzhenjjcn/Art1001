@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.aladdin</groupId>
+		<artifactId>aladdin-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>aladdin-vray-agent</artifactId>
+
+<licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+<developers>
+        <developer>
+            <name>WangZhen</name>
+            <email>wangzhenjjcn@gmail.com</email>
+        </developer>
+    </developers>
+ 
+	<dependencies>
+
+		<dependency>
+			<groupId>com.aladdin</groupId>
+			<artifactId>aladdin-shop-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aladdin</groupId>
+			<artifactId>aladdin-oss</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/org.hyperic/sigar -->
+<dependency>
+    <groupId>org.hyperic</groupId>
+    <artifactId>sigar</artifactId>
+    <version>1.6.5.132-6</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>com.aladdin</groupId>
+			<artifactId>aladdin-sketchup-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+			<version>3.2.6</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

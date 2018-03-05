@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模型管理</title>
+    <link rel="stylesheet" href="css/common.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/modelType_manager.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/pagination.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/mark.css"/>
+    <style>
+        .oneHeight{
+            height: 150px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body >
+
+<div class="modelType_manager">
+    <div class="m_header">
+        <p class="left">模型管理</p>
+        <form class="center radius">
+            <input placeholder="请输入产品名称" type="text" name="model_name"/>
+            <span id="search_btn">搜索</span>
+        </form>
+        <h2 class="right">
+            <a class="up_model radius" href="#" onclick="skp_upload_my_model()">上传模型</a>
+            <a class="up_danModel radius" href="#" onclick="skp_upload_single_model()">上传单品模型</a>
+        </h2>
+    </div>
+
+    <div class="m_nav">
+        <ul id="box">
+            <input type="hidden" name="model_brand" value=""/>
+            <li id="brand_m_tpl" class="active">
+                <script id="brand_tpl" type="text/juicer">
+                    <a href="#">品牌</a>
+                <ul class="oneHeight nav1 clearfix brand_cla">
+                        <li bd_id="">
+                            <span>全部</span>
+                        </li>
+                    {@each data as it,index}
+                        <li bd_id="${it.brand_id}">
+                            <span>${it.brand_name}</span>
+                        </li>
+                    {@/each}
+                </ul>
+            </script>
+            </li>
+            <input type="hidden" name="model_category" value=""/>
+            <input type="hidden" name="model_category_level" value=""/>
+            <li id="category_m_tpl" class="f_li">
+                <script id="category_tpl" type="text/juicer">
+                <a id="classify" href="#">分类</a>
+                <ul class="nav1 clearfix">
+                        <li >
+                            <span>全部</span>
+                        </li>
+                    {@each data as it,index}
+                    <li gc_id="${it.gc_id}" level="level1">
+                    <span>${it.gc_name}</span>
+                        <ul class="nav2">
+
+                            {@each it.categoryVOs as it2,index2}
+                            <li class="" gc_id="${it2.gc_id}" level="level2">
+                                <span>${it2.gc_name}</span>
+                                    <ul class="nav3">
+                                        {@each it2.categoryVOs as it3,index3}
+                                        <li gc_id="${it3.gc_id}" level="level3"><span>${it3.gc_name}</span></li>
+                                        {@/each}
+                                    </ul>
+                            </li>
+                             {@/each}
+                        </ul>
+                    </li>
+                    {@/each}
+                </ul>
+
+            </script>
+            </li>
+            <li>
+                <input type="hidden" name="style" value="">
+                <a href="#">风格</a>
+                <ul id="b1" class="nav1 clearfix">
+                    <li ><span>中式</span></li>
+                    <li ><span>日式</span></li>
+                    <li ><span>美式</span></li>
+                    <li ><span>欧式</span></li>
+                    <li ><span>混搭</span></li>
+                    <li ><span>现代</span></li>
+                    <li ><span>古典</span></li>
+                    <li ><span>田园</span></li>
+                    <li ><span>地中海</span></li>
+                </ul>
+            </li>
+            <li>
+                <input type="hidden" name="color" value="">
+                <a href="#">色系</a>
+                <ul id="b2" class="oneHeight nav1 clearfix">
+                    <li ><span>深色</span></li>
+                    <li ><span>中性</span></li>
+                    <li ><span>浅色</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="modelType_content">
+
+    </div>
+
+    <div id="Pagination" class="pagination">
+    </div>
+    <div class="mark">
+        <img src="images/modelType_manager/loadings.gif" alt=""/>
+    </div>
+</div>
+
+<script id="tpl" type="text/juicer">
+            {@each data as model,index}
+             {@if index==3}
+            <dl class="margin_no">
+            {@else if index==7}
+            <dl class="margin_no">
+            {@else if index==11}
+            <dl class="margin_no">
+            {@else}
+            <dl>
+            {@/if}
+                    <dt>
+                        <img src="${model.thumb}" alt=""/>
+                    <p id="hover">
+                        <b>
+                            <span class="del" onclick="delmode('${model.id}')">删除</span>
+                            <!-- <span class="editor" onclick="showinfo('${model.id}')">详情</span> -->
+                        </b>
+                        <a href="#;" onclick="down_model('${model.id}')"></a>
+                    </p>
+                    </dt>
+                    <dd>
+                        ${model.name}
+                    </dd>
+                </dl>
+            {@/each}
+</script>
+<!-- 删除 -->
+<div id="subdel">
+    <div class="rel">
+        <p class="large">确定删除吗？</p>
+        <p class="small">删除后将不可恢复</p>
+    </div>
+    <div class="rel">
+        <a class="cancel rborder">取消</a> <a class="confirm">确定删除</a>
+    </div>
+</div>
+
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/mark.js"></script>
+<script src="js/module/core/main.js"></script>
+<script src="js/module/core/user.js"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/jquery.pagination.js"></script>
+
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+<script>
+
+    var $page_size = 8;//每页显示数量
+
+    var $cur_page=1;//当前页
+
+    var $queryType='private';//private表示查找我的模型，public表示查找公共模型
+
+    var $tpl=document.getElementById('tpl').innerHTML;
+
+    var dl=$('.modelType_content dl');
+    var num=$(dl).length;
+    if(num >=9){
+        dl.css('margin-right','12px');
+    }else{
+        dl.css('margin-right','14px');
+    }
+
+    $(function(){
+        showlist(); //显示列表和分页信息
+        $('#Pagination').hide();
+        //分页定位
+        setTimeout(function () {
+            x();
+            $('#Pagination').show();
+        },200)
+
+        //选择分类
+        $(document).on('click','.nav1 li',function(){
+            var gcId=$(this).attr('gc_id');
+            var level=$(this).attr('level');
+            selectGc3(gcId,level);
+        });
+        //选择品牌
+        $(document).on('click','.brand_cla li',function(){
+            var bId=$(this).attr('bd_id');
+            selectBrand(bId);
+        })
+        //选择风格
+        $(document).on('click','#b1 li',function(){
+            var style=$(this).text();
+            $(":hidden[name=style]").val(style);
+            showlist();
+        });
+        //选择色系
+        $(document).on('click','#b2 li',function(){
+            var color=$(this).text();
+            $(":hidden[name=color]").val(color);
+            showlist();
+        });
+
+        $("#search_btn").click(function(){
+            $cur_page=1;
+            showlist();
+        });
+
+    });
+
+    function selectGc3(id,level){
+        $(":hidden[name=model_category]").val(id);
+        $(":hidden[name=model_category_level]").val(level);
+        showlist();
+    }
+
+    function showinfo(id){
+        //alert(id);
+    }
+
+    function selectBrand(id){
+        // if(id!='0'){
+            $(":hidden[name=model_brand]").val(id);
+            showlist();
+        // }
+    }
+
+    function down_model(id){
+        var obj = {"id":id};
+
+        var url = models_get_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+
+            if(response.code==200){
+                if(!response.data[0].skp){
+                    alert("没有模型");
+                }else{
+                    skp_down_my_model(response.data[0].skp,response.data);
+                }
+            }else{
+                alert("服务器错误");
+            }
+
+        });
+
+    }
+
+    //分页信息
+    function showlist(){
+        var obj = {"pageSize":$page_size,
+            "queryType":$queryType,
+            "brand":$(":hidden[name=model_brand]").val(),
+            "categoryId":$(":hidden[name=model_category]").val(),
+            "style":$(":hidden[name=style]").val(),
+            "color":$(":hidden[name=color]").val(),
+            "keyword":$(":text[name=model_name]").val()};
+
+        var url = models_totalPage_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            $("#Pagination").pagination(response.data.totalPage, {
+                current_page:$cur_page-1,
+                items_per_page: 1 ,//每页显示1项
+                callback:function(){
+                    var select_page_num=$('#Pagination .current:not(.prev):not(.next)').text();
+                    $cur_page=select_page_num;
+                    modellist();
+                    return false;
+                }
+            });
+        });
+
+    }
+
+    function modellist(){
+
+        var obj = {"pageSize":$page_size,
+            "queryType":"private",
+            "pageNo":$cur_page,
+            "brand":$(":hidden[name=model_brand]").val(),
+            "categoryId":$(":hidden[name=model_category]").val(),
+            "style":$(":hidden[name=style]").val(),
+            "color":$(":hidden[name=color]").val(),
+            "keyword":$(":text[name=model_name]").val()};
+
+        var url = models_search_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            var tpl_html = juicer($tpl, response);//模板赋值
+            $(".modelType_content").empty();
+            $(".modelType_content").html(tpl_html);
+        });
+
+    }
+
+    //m_nav点击
+    $('.m_nav').on('click','#box>li', function () {
+//        alert(1);
+        $(this).addClass('active').siblings().removeClass('active');
+        $(this).find('.nav1').show();
+
+    }).on("mouseleave",'#box>li',function(){
+        $("#box .nav1").hide();
+    });
+    //显示二级
+    $(document).on('mouseenter','.m_nav .nav1>li',function(){
+        $(this).addClass('active_li').siblings().removeClass('active_li');
+        $(this).siblings().find('ul').hide();
+        $(this).children('ul').show();
+    }).on("mouseleave",'.m_nav .nav1>li',function(){
+        $(this).children('ul').hide();
+        $(this).removeClass('active_li');
+    });
+    //显示三级
+    $(document).on('mouseenter','.m_nav .nav1>li li',function(){
+        $(this).addClass('active_li').siblings().removeClass('active_li');
+        $(this).siblings().find('ul').hide();
+        $(this).children('ul').show();
+    });
+    //点击
+    $(document).on('click', '.m_nav .nav1 li',function (e) {
+        e.stopPropagation();
+//        console.log(1)
+        $("#box .nav1").hide();
+        loadShow();
+
+    });
+
+
+    //调取品牌的数据
+    function loadBrand() {
+        var barnd_tpl = document.getElementById('brand_tpl').innerHTML;
+        var obj = {};
+        var url = brand_list_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            var code = response.code;
+            if (code == 200) {
+                var tpl_html = juicer(barnd_tpl, response);//模板赋值
+                $("#brand_m_tpl").empty();
+                $("#brand_m_tpl").html(tpl_html);
+
+            } else {
+                alert("服务器错误，请稍后重试");
+            }
+        });
+    }
+
+//调取类别的数据
+    function loadCategory() {
+
+        var category_tpl = document.getElementById('category_tpl').innerHTML;
+        var obj = {};
+        var url = category_list_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            var code = response.code;
+            if (code == 200) {
+                var tpl_html = juicer(category_tpl, response);//模板赋值
+                $("#category_m_tpl").empty();
+                $("#category_m_tpl").html(tpl_html);
+                addClickValue();
+            } else {
+                alert("服务器错误，请稍后重试");
+            }
+        });
+
+    }
+    loadCategory();
+    loadBrand();
+
+
+    //计算分页的宽
+    function x() {
+        var window_W = $('.modelType_manager').width();
+        var pagination = $('#Pagination').width();
+        var marL = ( window_W - pagination )/2;
+
+        $('#Pagination').css('margin-left', marL)
+    }
+
+    //删除操作
+    function delmode(id){
+        $("#subdel").css({display:"block"});
+        $(".confirm").off("click");
+        $(".confirm").bind("click",function(){
+            delinfo(id);
+        })
+    }
+    function delinfo(id){//你这里有参数
+
+        var obj = {};
+        var url = model_del_url+"/"+id;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            response = my_eval(response);
+            var code = response.code;
+            if (code == 200) {
+                var select_page_num=$('#Pagination .current:not(.prev):not(.next)').text();
+                showlist(select_page_num);
+                $("#subdel").css({display:"none"});
+            } else {
+                alert("服务器错误，请稍后重试");
+            }
+        });
+
+    }
+    //滑过显示隐藏
+    $(document).on('mouseenter','dt',function(){
+        $(this).find('#hover').show();
+    }).on('mouseleave','dt',function(){
+        $(this).find('#hover').hide();
+    });
+    // 删除
+    $(".cancel").bind("click",function(){
+        $("#subdel").css({display:"none"})
+    })
+    addClickValue();
+    function addClickValue(){
+        $("#box>li").on("click",function(){
+            //console.log($(this));
+            _this = $(this);
+            $("#box span").on("click",function(){
+                _this.find("a").html( $(this).html() );
+            })
+        })
+        
+    }
+</script>
+</body>
+</html>

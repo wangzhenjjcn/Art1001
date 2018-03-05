@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>型录</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/xinglu.css">
+</head>
+<body>
+<!-- <div id="headsearch">
+    <div class="headsearch">
+        <input id="search" type="text" placeholder="搜索..." />
+    </div>
+</div> -->
+<!-- 3 setup a container element -->
+<div id="jstree">
+
+</div>
+    <!--创建顶级型录-->
+    <div class="topxl" style="display: none;">
+        <div class="header">
+            <p>创建型录</p>
+        </div>
+        <input type="text" placeholder="型录名称" id="xlname">
+        <input type="button" value="保存" id="baocun1">
+        <input type="button" value="关闭" id="close" onclick="closeDialog()">
+    </div>
+    <!--创建子项-->
+    <div class="creatSon" style="display: none;">
+        <div class="header">
+            <p>创建子项</p>
+            <input type="text" placeholder="型录名称" id="xlname1">
+            <input type="button" value="保存" id="baocun2">
+            <input type="button" value="关闭" id="close" onclick="closeDialog()">
+        </div>
+    </div>
+    <!--修改-->
+    <div class="revise" style="display: none;">
+        <div class="header">
+            <p>修改型录</p>
+            <br>
+            <input type="text" placeholder="型录名称" id="xlname2">
+            <input type="button" value="保存" id="baocun3">
+            <input type="button" value="关闭" id="close" onclick="closeDialog()">
+        </div>
+    </div>
+    <!--删除型录-->
+<div id="subdel" class="sys-dialog deleteItem fixed" style="display: none;">
+    <div class="csContent">
+        <p class="large">确定删除吗？</p>
+        <p class="small" style="color: #999;">删除后将不可恢复</p>
+    </div>
+    <div class="csGroup">
+        <a class="cancel" onclick="closeDialog(event);">取消</a>
+        <a class="confirm" onclick="confirmDelete(event);">确定删除</a>
+    </div>
+</div>
+    <!--添加产品-->
+<form action="post" class="addproduct" style="display: none">
+    <div class="title rel">添加产品</div>
+    <div class="mingchen1">
+        <div class="mingchen" style="float: left">名称:</div>
+        <input type="text" class="catalogname" placeholder="产品名称">
+    </div>
+    <div class="pinpai1">
+        <div class="pinpai" style="float: left">品牌:</div>
+        <select name="" id="pinpainame">
+            <script id="brand_tpl" type="text/juicer">
+                    <option value="">无</option>
+                    {@each data as it,index}
+                        <option value="${it.brand_id}">${it.brand_name}</option>
+                    {@/each}
+            </script>
+        </select>
+        <div class="danjia">单价:</div>
+        <input type="text" class="danjianame" placeholder="单价">
+    </div>
+    <div class="xinghao1">
+        <div class="xinghao" style="float: left">型号:</div>
+        <input type="text" class="xinghaoname" placeholder="型号">
+        <div class="guige">规格:</div>
+        <input type="text" class="guigename" placeholder="规格">
+    </div>
+    <div class="danwei1">
+        <div class="danwei">单位:</div>
+        <select name="" class="danweiname">
+            <option value="">无</option>
+            <option value="个">个</option>
+            <option value="支">支</option>
+            <option value="台">台</option>
+            <option value="块">块</option>
+            <option value="m">m</option>
+            <option value="根">根</option>
+            <option value="片">片</option>
+            <option value="把">把</option>
+            <option value="套">套</option>
+            <option value="快">快</option>
+            <option value="档">档</option>
+            <option value="樘">樘</option>
+            <option value="卷">卷</option>
+            <option value="付">付</option>
+            <option value="桶">桶</option>
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="㎡">㎡</option>
+            <option value="户">户</option>
+        </select>
+        <div class="rengongfee">人工费:</div>
+        <input type="text" class="rengongfeename" placeholder="人工费">
+    </div>
+    <div class="cailiaofee1">
+        <div class="cailiaofee">材料费:</div>
+        <input type="text" class="cailiaofeename" placeholder="材料费">
+        <div class="banyunfee">搬运费:</div>
+        <input type="text" class="banyunfeename" placeholder="搬运费">
+    </div>
+    <div class="anzhuangfee1">
+        <div class="anzhuangfee">安装费:</div>
+        <input type="text" class="anzhuangfeename" placeholder="安装费">
+        <div class="sunhaorate">损耗率:</div>
+        <input type="text" class="sunhaoratename" placeholder="损耗率">
+    </div>
+    <div class="jieduan1">
+        <div class="jieduan">阶段:</div>
+        <select name="" class="jieduanname">
+            <option value="前期">前期</option>
+            <option value="水电">水电</option>
+            <option value="油漆">油漆</option>
+            <option value="泥瓦">泥瓦</option>
+            <option value="验收">验收</option>
+        </select>
+        <div class="gongcheng">工程:</div>
+        <select name="" class="gongchengname">
+            <option value="天棚工程">天棚工程</option>
+            <option value="地面工程">地面工程</option>
+            <option value="墙面工程">墙面工程</option>
+            <option value="安装">安装</option>
+        </select>
+    </div>
+    <div class="shuchutype">输出类型:</div>
+    <select name="" class="shuchutypename">
+        <option value="construction">施工</option>
+        <option value="auxiliary_material">主材</option>
+        <option value="main_material">辅材</option>
+    </select>
+    <div class="xuanzequyu">选择区域</div>
+    <div id="box">
+        <ul id="list">
+            <li><span>家餐厅</span></li>
+            <li><span>主卧</span></li>
+            <li><span>次卧</span></li>
+            <li><span>卧房</span></li>
+            <li><span>卫生间</span></li>
+            <li><span>阳台</span></li>
+        </ul>
+    </div>
+    <div class="baocun4">保存</div>
+    <div class="closedialog" onclick="closeDialog()">关闭</div>
+</form>
+<div id="footer">
+    <input type="button" id="btn_ok" value="提交" >
+    <input type="button" id="btn_cancel" value="关闭" >
+</div>
+
+<input type="hidden" id="mid">
+
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf"></script>
+<script src="js/jstree.min.js"></script>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+<script src="js/module/core/main.js"></script>
+<script src="js/module/core/user.js"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/module/user/xinglu.js"></script>
+
+<script>
+    $(function(){
+        loadBrand();
+    });
+</script>
+</body>
+</html>

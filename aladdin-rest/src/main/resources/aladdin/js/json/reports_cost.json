@@ -1,0 +1,1919 @@
+{
+    "id": "reports_cost",
+    "name": "成本明细表",
+    "house_area": 90.43,
+    "children": [
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "立邦内墙乳胶漆-面漆金牌抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "顶面乳胶漆",
+                                    "children": [
+                                        {
+                                            "name": "顶面混凝土面批普通腻子",
+                                            "workload": 31.41,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 1099.35,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "板缝贴胶带、点锈",
+                                            "workload": 31.41,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "顶面乳胶漆涂刷三遍",
+                                            "workload": 31.41,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dff384e6d3b54bfead2edbb6198ec9a3",
+                            "product_amount": 280.13410000000005,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "立邦乳胶漆抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "混凝土墙面批普通腻子",
+                                            "workload": 54.61,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 1911.35,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面钉（贴）纤维网格布",
+                                            "workload": 54.61,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面有色乳胶漆涂刷三遍",
+                                            "workload": 54.61,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5ecd3f1690914813830c62900e4a3fa9",
+                            "product_amount": 487.5780000000001,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": 3.3,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 115.5,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "入户门洞口修正",
+                                    "children": [
+                                        {
+                                            "name": "入户门洞口修正",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 60,
+                                            "unitprice_material": 10,
+                                            "amount": 70,
+                                            "remark": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "房门门洞口修正",
+                                    "children": [
+                                        {
+                                            "name": "房门门洞口修正",
+                                            "workload": 4,
+                                            "unit": "个",
+                                            "unitprice_man": 60,
+                                            "unitprice_material": 10,
+                                            "amount": 280,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "地面工程",
+                    "children": [
+                        {
+                            "name": "诺贝尔抛光砖JF6001K",
+                            "children": [
+                                {
+                                    "name": "600mm*600mm地砖楼地面密缝铺设，普通填缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "600mm*600mm地砖楼地面密缝铺设，普通填缝剂勾缝",
+                                            "workload": 23.560000000000002,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 2191.0800000000004,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "3eb0d781042547e4bfe09399e466882c",
+                            "product_amount": 1955.48,
+                            "transport_expenses": 49.120000000000005,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 83,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "诺贝尔抛光砖FK80019",
+                            "children": [
+                                {
+                                    "name": "80mm*600mm地砖波打线",
+                                    "children": [
+                                        {
+                                            "name": "80mm*600mm地砖波打线",
+                                            "workload": 0.71,
+                                            "unit": "㎡",
+                                            "unitprice_man": 20,
+                                            "unitprice_material": 0,
+                                            "amount": 14.2,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "1ddb78d5bc78433cbc4a18badd4592ea",
+                            "product_amount": 12.07,
+                            "transport_expenses": 3.42,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 17,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "门槛石",
+                                    "children": [
+                                        {
+                                            "name": "门槛石铺贴",
+                                            "workload": 0.4,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 350,
+                                            "amount": 140,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "门槛石加筋",
+                                            "workload": 3.1500000000000004,
+                                            "unit": "m",
+                                            "unitprice_man": 10,
+                                            "unitprice_material": 0,
+                                            "amount": 31.500000000000004,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "三雄极光LED筒灯PAK560144",
+                            "children": [
+                                {
+                                    "name": "筒灯",
+                                    "children": [
+                                        {
+                                            "name": "筒灯",
+                                            "workload": 9,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "c8849c9bcda946b3b5f4935626c1e549",
+                            "product_amount": 261,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 29,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "三雄极光LED天花射灯IIIPAK565240",
+                            "children": [
+                                {
+                                    "name": "射灯",
+                                    "children": [
+                                        {
+                                            "name": "射灯",
+                                            "workload": 4,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "0b3763e9b198486698434b119b82d97b",
+                            "product_amount": 116,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 29,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "金迪免漆入户单垭口",
+                            "children": [
+                                {
+                                    "name": "入户衣钩",
+                                    "children": [
+                                        {
+                                            "name": "入户衣钩",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "0a7e877491ef4d98a0eaee9f4bc62204",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "入户门套安装",
+                                    "children": [
+                                        {
+                                            "name": "入户门套安装",
+                                            "workload": 5.2,
+                                            "unit": "m",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "门锁",
+                                    "children": [
+                                        {
+                                            "name": "门锁（含合页、门吸）",
+                                            "workload": 2,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "铜合页",
+                                    "children": [
+                                        {
+                                            "name": "铜合页",
+                                            "workload": 3,
+                                            "unit": "付",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "金迪免漆单移玻璃门三格玻璃DM02BF-035",
+                            "children": [
+                                {
+                                    "name": "厨房单开玻璃门安装",
+                                    "children": [
+                                        {
+                                            "name": "厨房单开玻璃门安装（可替换双移门）",
+                                            "workload": 1,
+                                            "unit": "樘",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "04c32109f3f744008ed3c80e03887454",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "金迪免漆门  DM18AF-310竖纹",
+                            "children": [
+                                {
+                                    "name": "房门及门套安装（主卧门、次卧门、书房门、主卫门、次卫门）",
+                                    "children": [
+                                        {
+                                            "name": "房门及门套安装（主卧门、次卧门、书房门、主卫门、次卫门）",
+                                            "workload": 3,
+                                            "unit": "樘",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "309724701aee4c66aaee056fe85da088",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "金迪免漆踢脚线",
+                            "children": [
+                                {
+                                    "name": "踢脚线安装",
+                                    "children": [
+                                        {
+                                            "name": "踢脚线安装",
+                                            "workload": 48.029999999999994,
+                                            "unit": "m",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "fd03eb575bc24362b4916dbdcddf8ef3",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                }
+            ],
+            "zone": "客餐厅"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "立邦内墙乳胶漆-面漆金牌抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "顶面乳胶漆",
+                                    "children": [
+                                        {
+                                            "name": "顶面混凝土面批普通腻子",
+                                            "workload": 14.32,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 501.2,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "板缝贴胶带、点锈",
+                                            "workload": 14.32,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "顶面乳胶漆涂刷三遍",
+                                            "workload": 14.32,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dff384e6d3b54bfead2edbb6198ec9a3",
+                            "product_amount": 127.8776,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "立邦乳胶漆抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "混凝土墙面批普通腻子",
+                                            "workload": 31.62999999999999,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 1107.0499999999995,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面钉（贴）纤维网格布",
+                                            "workload": 31.62999999999999,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面有色乳胶漆涂刷三遍",
+                                            "workload": 31.62999999999999,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5ecd3f1690914813830c62900e4a3fa9",
+                            "product_amount": 282.4559000000001,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": 0.91,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 31.85,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "肯帝亚实木复合地板龙凤檀色",
+                            "children": [
+                                {
+                                    "name": "地板及木龙骨铺装",
+                                    "children": [
+                                        {
+                                            "name": "地板及木龙骨铺装",
+                                            "workload": 10.81,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dfc23382108749e5be5b9b812da14165",
+                            "product_amount": 1581.5030000000002,
+                            "transport_expenses": 59.050000000000004,
+                            "install_expenses": 767.65,
+                            "wastage_rate": 10,
+                            "price": 133,
+                            "temp_transport_expenses": 5,
+                            "temp_install_expenses": 65
+                        }
+                    ]
+                }
+            ],
+            "zone": "主卧"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "立邦内墙乳胶漆-面漆金牌抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "顶面乳胶漆",
+                                    "children": [
+                                        {
+                                            "name": "顶面混凝土面批普通腻子",
+                                            "workload": 9.950000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 348.25000000000006,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "板缝贴胶带、点锈",
+                                            "workload": 9.950000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "顶面乳胶漆涂刷三遍",
+                                            "workload": 9.950000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dff384e6d3b54bfead2edbb6198ec9a3",
+                            "product_amount": 88.85350000000001,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "立邦乳胶漆抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "混凝土墙面批普通腻子",
+                                            "workload": 20.359999999999996,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 712.5999999999999,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面钉（贴）纤维网格布",
+                                            "workload": 20.359999999999996,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面有色乳胶漆涂刷三遍",
+                                            "workload": 20.359999999999996,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5ecd3f1690914813830c62900e4a3fa9",
+                            "product_amount": 181.7255,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": 0.9,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 31.5,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "肯帝亚实木复合地板龙凤檀色",
+                            "children": [
+                                {
+                                    "name": "地板及木龙骨铺装",
+                                    "children": [
+                                        {
+                                            "name": "地板及木龙骨铺装",
+                                            "workload": 7.06,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dfc23382108749e5be5b9b812da14165",
+                            "product_amount": 1032.878,
+                            "transport_expenses": 40.3,
+                            "install_expenses": 523.9,
+                            "wastage_rate": 10,
+                            "price": 133,
+                            "temp_transport_expenses": 5,
+                            "temp_install_expenses": 65
+                        }
+                    ]
+                }
+            ],
+            "zone": "次卧"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "立邦内墙乳胶漆-面漆金牌抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "顶面乳胶漆",
+                                    "children": [
+                                        {
+                                            "name": "顶面混凝土面批普通腻子",
+                                            "workload": 10.06,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 352.1,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "板缝贴胶带、点锈",
+                                            "workload": 10.06,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "顶面乳胶漆涂刷三遍",
+                                            "workload": 10.06,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dff384e6d3b54bfead2edbb6198ec9a3",
+                            "product_amount": 89.65719999999999,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "立邦乳胶漆抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "混凝土墙面批普通腻子",
+                                            "workload": 21.22,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 742.6999999999999,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面钉（贴）纤维网格布",
+                                            "workload": 21.22,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "墙面有色乳胶漆涂刷三遍",
+                                            "workload": 21.22,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5ecd3f1690914813830c62900e4a3fa9",
+                            "product_amount": 189.4053,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "肯帝亚实木复合地板龙凤檀色",
+                            "children": [
+                                {
+                                    "name": "地板及木龙骨铺装",
+                                    "children": [
+                                        {
+                                            "name": "地板及木龙骨铺装",
+                                            "workload": 6.78,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dfc23382108749e5be5b9b812da14165",
+                            "product_amount": 991.9140000000001,
+                            "transport_expenses": 38.9,
+                            "install_expenses": 505.7,
+                            "wastage_rate": 10,
+                            "price": 133,
+                            "temp_transport_expenses": 5,
+                            "temp_install_expenses": 65
+                        },
+                        {
+                            "name": "标准吊顶包2",
+                            "product_id": "bdbb51b268a24476832124ffe6412977",
+                            "product_amount": 2365.5209999999997,
+                            "transport_expenses": 23.099999999999998,
+                            "install_expenses": 23.099999999999998,
+                            "wastage_rate": 1,
+                            "price": 222,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 2
+                        }
+                    ]
+                }
+            ],
+            "zone": "儿童房"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "楚楚铝扣板",
+                            "children": [
+                                {
+                                    "name": "铝扣板吊顶安装",
+                                    "children": [
+                                        {
+                                            "name": "铝扣板吊顶安装",
+                                            "workload": 3.85,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "0392230a2df04e12802ad6cad00c1ec5",
+                            "product_amount": 322.39900000000006,
+                            "transport_expenses": 0,
+                            "install_expenses": 24.25,
+                            "wastage_rate": 6,
+                            "price": 79,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 5
+                        },
+                        {
+                            "name": "楚楚集成吊顶照明",
+                            "children": [
+                                {
+                                    "name": "铝扣板吊顶电气模块安装",
+                                    "children": [
+                                        {
+                                            "name": "铝扣板吊顶电气模块安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "07b1d98a9d5047ecaf1db21c77e09c3e",
+                            "product_amount": 78,
+                            "transport_expenses": 0,
+                            "install_expenses": 60,
+                            "wastage_rate": 0,
+                            "price": 78,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 30
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "诺贝尔抛光砖JF6010K",
+                            "children": [
+                                {
+                                    "name": "300mm*600mm墙面砖水泥砂浆粘贴铺设，普通填缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "300mm*600mm墙面砖水泥砂浆粘贴铺设，普通填缝剂勾缝",
+                                            "workload": 15.04,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 1398.72,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "f1a7ebfb555e4adf91f99316c0a6c387",
+                            "product_amount": 991.98,
+                            "transport_expenses": 32.06,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 66,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "包管道",
+                                    "children": [
+                                        {
+                                            "name": "包管道",
+                                            "workload": 0.96,
+                                            "unit": "㎡",
+                                            "unitprice_man": 80,
+                                            "unitprice_material": 45,
+                                            "amount": 120,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": 0.71,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 24.849999999999998,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "地面工程",
+                    "children": [
+                        {
+                            "name": "罗马利奥仿古砖V61003",
+                            "children": [
+                                {
+                                    "name": "300mm*300mm地砖楼地面密缝铺设，普通勾缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "300mm*300mm地砖楼地面密缝铺设，普通填缝剂勾缝",
+                                            "workload": 3.94,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 366.42,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5472e0ef448242f989260aad0521e98c",
+                            "product_amount": 236.4,
+                            "transport_expenses": 9.879999999999999,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 60,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "老板油烟机（T型机）",
+                            "children": [
+                                {
+                                    "name": "厨房电器安装（烟机）",
+                                    "children": [
+                                        {
+                                            "name": "厨房电器安装（烟机）",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "f2fc1ef22fb843f1a2befe9d72311300",
+                            "product_amount": 1560,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 1560,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "老板燃气灶JZ(Y.R.T)-7B13(长*宽*高):720×420×160",
+                            "children": [
+                                {
+                                    "name": "厨房电器安装（灶具）",
+                                    "children": [
+                                        {
+                                            "name": "厨房电器安装（灶具）",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "387040f667cd497c84135aa1f413ee7e",
+                            "product_amount": 720,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 720,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "欧琳水槽",
+                            "children": [
+                                {
+                                    "name": "水槽安装",
+                                    "children": [
+                                        {
+                                            "name": "水槽安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "d32cfc0bcd734162bdb943890bb4b962",
+                            "product_amount": 534,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 534,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "欧琳水槽龙头",
+                            "children": [
+                                {
+                                    "name": "龙头安装",
+                                    "children": [
+                                        {
+                                            "name": "龙头安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "90dadb170c734839996179d83546e868",
+                            "product_amount": 186,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 186,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                }
+            ],
+            "zone": "厨房"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "楚楚铝扣板",
+                            "children": [
+                                {
+                                    "name": "铝扣板吊顶安装",
+                                    "children": [
+                                        {
+                                            "name": "铝扣板吊顶安装",
+                                            "workload": 3.76,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "0392230a2df04e12802ad6cad00c1ec5",
+                            "product_amount": 314.86240000000004,
+                            "transport_expenses": 0,
+                            "install_expenses": 23.799999999999997,
+                            "wastage_rate": 6,
+                            "price": 79,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 5
+                        },
+                        {
+                            "name": "楚楚三合一电器",
+                            "children": [
+                                {
+                                    "name": "铝扣板吊顶电气模块安装",
+                                    "children": [
+                                        {
+                                            "name": "铝扣板吊顶电气模块安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "58f861a8e69e42be9c437d39493bfb7b",
+                            "product_amount": 446,
+                            "transport_expenses": 0,
+                            "install_expenses": 160,
+                            "wastage_rate": 0,
+                            "price": 446,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 80
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "诺贝尔抛光砖JF6010K",
+                            "children": [
+                                {
+                                    "name": "300mm*600mm墙面砖水泥砂浆粘贴铺设，普通填缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "300mm*600mm墙面砖水泥砂浆粘贴铺设，普通填缝剂勾缝",
+                                            "workload": 17.490000000000006,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 1626.5700000000006,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "f1a7ebfb555e4adf91f99316c0a6c387",
+                            "product_amount": 1153.02,
+                            "transport_expenses": 36.94,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 66,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": 0.71,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 24.849999999999998,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "地面工程",
+                    "children": [
+                        {
+                            "name": "罗马利奥仿古砖V61003",
+                            "children": [
+                                {
+                                    "name": "300mm*300mm地砖楼地面密缝铺设，普通勾缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "300mm*300mm地砖楼地面密缝铺设，普通填缝剂勾缝",
+                                            "workload": 3.94,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 366.42,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "5472e0ef448242f989260aad0521e98c",
+                            "product_amount": 236.4,
+                            "transport_expenses": 9.879999999999999,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 60,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "HCG和成连体坐便器",
+                            "children": [
+                                {
+                                    "name": "坐便器安装",
+                                    "children": [
+                                        {
+                                            "name": "坐便器安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "daafd991f1784a2d8e74fd6e55b64e85",
+                            "product_amount": 737,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 737,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "HCG和成淋浴花洒",
+                            "children": [
+                                {
+                                    "name": "卫浴五金安装",
+                                    "children": [
+                                        {
+                                            "name": "卫浴五金安装",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "11e504b99de54824a3bd6259f3fe569c",
+                            "product_amount": 740,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 740,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "屋牛定制浴室柜",
+                            "children": [
+                                {
+                                    "name": "台盆柜安装",
+                                    "children": [
+                                        {
+                                            "name": "台盆柜安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "8f54465d08484f9eadc794b6cc0af331",
+                            "product_amount": 1278,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 1278,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "乐瑞厕纸架带置物台81501-86",
+                            "children": [
+                                {
+                                    "name": "卫浴五金安装"
+                                }
+                            ],
+                            "product_id": "0b2baf6f5a0f4bb2adacc8c577a77911",
+                            "product_amount": 95,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 95,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "乐瑞毛巾杆81501-24",
+                            "children": [
+                                {
+                                    "name": "卫浴五金安装",
+                                    "children": [
+                                        {
+                                            "name": "卫浴五金安装",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "4d60a07509b340fe8eda84a9dba2df68",
+                            "product_amount": 95,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 95,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "乐瑞四衣钩81501-488",
+                            "children": [
+                                {
+                                    "name": "卫浴五金安装",
+                                    "children": [
+                                        {
+                                            "name": "卫浴五金安装",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "55971c18a2754d3388dfce8844b72adc",
+                            "product_amount": 95,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 95,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "乐瑞浴巾架81501-02",
+                            "children": [
+                                {
+                                    "name": "卫浴五金安装",
+                                    "children": [
+                                        {
+                                            "name": "卫浴五金安装",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "714d240910944b188ac01fb3a75ae8cf",
+                            "product_amount": 95,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 95,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "潜水艇洗衣机地漏",
+                            "children": [
+                                {
+                                    "name": "洗衣机地漏",
+                                    "children": [
+                                        {
+                                            "name": "洗衣机地漏",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "4c6e1235bc334e358115d2d8a76ff3a1",
+                            "product_amount": 51,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 51,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "朗斯淋浴房(钻石型)",
+                            "children": [
+                                {
+                                    "name": "淋浴房安装",
+                                    "children": [
+                                        {
+                                            "name": "淋浴房安装",
+                                            "workload": 1,
+                                            "unit": "套",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "7aa8e1db2e2b4c4cbee32b4952fb75f4",
+                            "product_amount": 3195,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 750,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                }
+            ],
+            "zone": "卫生间(主)"
+        },
+        {
+            "children": [
+                {
+                    "name": "天棚工程",
+                    "children": [
+                        {
+                            "name": "立邦内墙乳胶漆-面漆金牌抗甲醛净味五合一",
+                            "children": [
+                                {
+                                    "name": "立邦内墙乳胶漆-底漆金牌净味内墙底漆 (5L 白)"
+                                },
+                                {
+                                    "name": "顶面乳胶漆",
+                                    "children": [
+                                        {
+                                            "name": "顶面混凝土面批普通腻子",
+                                            "workload": 12.100000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": 423.50000000000006,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "板缝贴胶带、点锈",
+                                            "workload": 12.100000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        },
+                                        {
+                                            "name": "顶面乳胶漆涂刷三遍",
+                                            "workload": 12.100000000000001,
+                                            "unit": "㎡",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "dff384e6d3b54bfead2edbb6198ec9a3",
+                            "product_amount": 107.96369999999997,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 8.93,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "墙面工程",
+                    "children": [
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "包管道",
+                                    "children": [
+                                        {
+                                            "name": "包管道",
+                                            "workload": 1.22,
+                                            "unit": "㎡",
+                                            "unitprice_man": 80,
+                                            "unitprice_material": 45,
+                                            "amount": 152.5,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "",
+                            "children": [
+                                {
+                                    "name": "墙面油漆基层",
+                                    "children": [
+                                        {
+                                            "name": "墙体阳角条预埋",
+                                            "workload": -0.93,
+                                            "unit": "",
+                                            "unitprice_man": 25,
+                                            "unitprice_material": 10,
+                                            "amount": -32.550000000000004,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "",
+                            "product_amount": 0,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 0,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "地面工程",
+                    "children": [
+                        {
+                            "name": "罗马利奥仿古砖浅米黄96030",
+                            "children": [
+                                {
+                                    "name": "300mm*300mm地砖楼地面密缝铺设，普通勾缝剂勾缝",
+                                    "children": [
+                                        {
+                                            "name": "300mm*300mm地砖楼地面密缝铺设，普通填缝剂勾缝",
+                                            "workload": 8.09,
+                                            "unit": "㎡",
+                                            "unitprice_man": 65,
+                                            "unitprice_material": 28,
+                                            "amount": 752.37,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "e07dc3cb1f984ac696415f07b3eea016",
+                            "product_amount": 323.6,
+                            "transport_expenses": 18.18,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 40,
+                            "temp_transport_expenses": 2,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                },
+                {
+                    "name": "安装",
+                    "children": [
+                        {
+                            "name": "潜水艇普通地漏",
+                            "children": [
+                                {
+                                    "name": "地漏",
+                                    "children": [
+                                        {
+                                            "name": "地漏",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "96f5d8bae8d44ecaa72080a16851af86",
+                            "product_amount": 51,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 51,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "潜水艇洗衣机地漏",
+                            "children": [
+                                {
+                                    "name": "洗衣机地漏",
+                                    "children": [
+                                        {
+                                            "name": "洗衣机地漏",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "4c6e1235bc334e358115d2d8a76ff3a1",
+                            "product_amount": 51,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 51,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        },
+                        {
+                            "name": "和成洗衣机龙头",
+                            "children": [
+                                {
+                                    "name": "洗衣机龙头安装",
+                                    "children": [
+                                        {
+                                            "name": "洗衣机龙头安装",
+                                            "workload": 1,
+                                            "unit": "个",
+                                            "unitprice_man": 0,
+                                            "unitprice_material": 0,
+                                            "amount": 0,
+                                            "remark": ""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "product_id": "cfb14771bf174777921b5b9fa1ecf845",
+                            "product_amount": 27,
+                            "transport_expenses": 0,
+                            "install_expenses": 0,
+                            "wastage_rate": 0,
+                            "price": 27,
+                            "temp_transport_expenses": 0,
+                            "temp_install_expenses": 0
+                        }
+                    ]
+                }
+            ],
+            "zone": "阳台"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aladdin.series.mapper.SeriesMapper" >
+  <resultMap id="BaseResultMap" type="com.aladdin.series.entity.Series" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="version" property="version" jdbcType="INTEGER" />
+    <result column="latest" property="latest" jdbcType="TINYINT" />
+    <result column="create_by" property="createBy" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="json" property="json" jdbcType="LONGVARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, name, version, latest, create_by, create_time, status,json
+  </sql>
+
+  <select id="selectCountByCondition" resultType="java.lang.Integer" parameterType="com.aladdin.series.entity.Series">
+    select count(id) from a_series
+    <where>
+    	<if test="id != null and id !=''">
+    		and id=#{id}
+    	</if>
+    	<if test="latest != null">
+    		and latest=#{latest}
+    	</if>   
+    	<if test="status != null">
+    		and status=#{status}
+    	</if>    	 	
+    	<if test="createBy != null and createBy != ''">
+    		and create_by = #{createBy}
+    	</if>
+    	<if test="name !=null and name != ''">
+    		and name like concat(concat('%',#{name}),'%')
+    	</if>
+    </where>
+  </select>
+  
+  <select id="selectListByCondition" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from a_series
+    <where>
+    	<if test="series.id != null and series.id !=''">
+    		and id=#{series.id}
+    	</if>
+    	<if test="series.latest != null">
+    		and latest=#{series.latest}
+    	</if>   
+    	<if test="series.status != null">
+    		and status=#{series.status}
+    	</if>    	 	
+    	<if test="series.createBy != null and series.createBy != ''">
+    		and create_by = #{series.createBy}
+    	</if>
+    	<if test="series.name !=null and series.name != ''">
+    		and name like concat(concat('%',#{series.name}),'%')
+    	</if>
+    </where>
+    order by create_time desc
+    <if test="start != null and limit != null">
+    	limit #{start},#{limit}
+    </if> 
+  </select>
+ 
+</mapper>

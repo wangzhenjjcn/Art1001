@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="js/jquery-1.12.1.min.js" charset="utf-8"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/module/core/main.js" charset="utf-8"></script>
+<script src="js/module/core/user.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+</head>
+<body>
+</body>
+<script>
+
+	function pullFromRemote(id){
+		   var url = server_url+"/api/render/"+id;
+	       $.fn.mypost(url,{},getUserToken(),function(response){
+	           response = my_eval(response);
+	           if(response&&response.data&&response.data.state==2){
+	           	end_loading();
+	  			 setTimeout(function(){$('body').append("<img src='"+response.data.outputUrl+"'/>");
+	  			 						
+	  									},200);
+	  			}else if(response&&response.data&&response.data.state!=2){
+	  				// $('body').empty().append("<div>渲染中。。。</div>");
+	  				begin_loading();	  				
+	  				window.setTimeout(function(){pullFromRemote(id)},1000);
+	  			}else if(response&&response.data&&response.data.outputUrl==""){
+	  				alert("渲染失败");
+	  			}else{
+	  				alert("无效的id");
+	  			}
+	       });
+	}
+	(function init(){
+		var search = window.location.search;
+		if(search){
+			var paramArr = search.substring(1).split("&");
+			if(paramArr){
+				for(var i=0;i<paramArr.length;i++){
+					var keyAndValue= paramArr[i].split("=");
+					var key = keyAndValue[0];
+					var value = keyAndValue[1];
+					if(key&&key==="id"&&value){
+						pullFromRemote(value);
+					}else{
+						alert("请传递有效参数id");
+					}
+				}
+			}
+		}else{
+			alert("请传递有效参数id");
+		}
+	})();
+
+	
+	
+	
+	/* pullFromRemote("402dd7ab157e43099daf62394032df1d"); */
+</script> </html>

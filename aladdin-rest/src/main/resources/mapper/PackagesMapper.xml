@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aladdin.packages.mapper.PackagesMapper" >
+  <resultMap id="BaseResultMap" type="com.aladdin.packages.entity.Packages" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="style" property="style" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="unitprice" property="unitprice" jdbcType="VARCHAR" />
+    <result column="json" property="json" jdbcType="VARCHAR" />
+    <result column="effect" property="effect" jdbcType="VARCHAR" />
+    <result column="created_by" property="createdBy" jdbcType="CHAR" />
+    <result column="modified_date" property="modifiedDate" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="created_date" property="createdDate" jdbcType="TIMESTAMP" />
+    <result column="modified_by" property="modifiedBy" jdbcType="CHAR" />
+    <result column="skp" property="skp" jdbcType="CHAR" />
+    <result column="series" property="series" jdbcType="CHAR" />
+    <result column="version" property="version" jdbcType="INTEGER" />
+    <result column="latest" property="latest" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, style, area, unitprice, json, effect, created_by, modified_date, status, 
+    created_date, modified_by, skp, series, version, latest
+  </sql>
+ 
+<select id="selectListByCondition" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from a_packages
+    <where>
+    	<if test="packages.id != null">
+			AND id = #{packages.id}
+		</if>
+		<if test="packages.name != null">
+			AND `name` = #{packages.name}
+		</if>
+		<if test="packages.style != null">
+			AND `style` = #{packages.style}
+		</if>
+		<if test="packages.area != null">
+			AND `area` = #{packages.area}
+		</if>
+		<if test="packages.unitprice != null">
+			AND `unitprice` = #{packages.unitprice}
+		</if>
+		<if test="packages.version != null">
+			AND `version` = #{packages.version}
+		</if>
+		<if test="packages.latest != null">
+			AND `latest` = #{packages.latest}
+		</if>
+		<if test="packages.effect != null">
+			AND `effect` = #{packages.effect}
+		</if>
+		<if test="packages.json != null">
+			AND `json` = #{packages.json}
+		</if>
+		<if test="packages.skp != null">
+			AND `skp` = #{packages.skp}
+		</if>
+		<if test="packages.createdBy != null">
+			AND `created_by` = #{packages.createdBy}
+		</if>
+		<if test="packages.series != null">
+			AND `series` = #{packages.series}
+		</if>
+		<if test="packages.status != null">
+			AND `status` = #{packages.status}
+		</if>
+		<if test="minprice !=null">
+			<![CDATA[ and `unitprice` >= #{minprice} ]]> 
+			
+		</if>
+		<if test="maxprice !=null">
+			<![CDATA[ and `unitprice` < #{maxprice} ]]> 
+			
+		</if>
+		
+		<if test="keyword != null and  keyword != ''">
+			AND (
+			name LIKE CONCAT('%',#{keyword},'%')
+			OR
+			area
+			LIKE
+			CONCAT('%',#{keyword},'%')
+			OR
+			unitprice LIKE
+			CONCAT('%',#{keyword},'%')
+			)
+		</if>
+    </where>
+    ORDER BY created_date desc
+	<if test="start != null and limit != null">
+	limit #{start},#{limit}
+	</if>
+ 
+</select>
+  
+<select id="selectCountByCondition" resultType="java.lang.Integer">
+    select
+    count(id)
+    from a_packages
+    
+     <where>
+    	<if test="packages.id != null">
+			AND id = #{packages.id}
+		</if>
+		<if test="packages.name != null">
+			AND `name` = #{packages.name}
+		</if>
+		<if test="packages.style != null">
+			AND `style` = #{packages.style}
+		</if>
+		<if test="packages.area != null">
+			AND `area` = #{packages.area}
+		</if>
+		<if test="packages.unitprice != null">
+			AND `unitprice` = #{packages.unitprice}
+		</if>
+		<if test="packages.version != null">
+			AND `version` = #{packages.version}
+		</if>
+		<if test="packages.latest != null">
+			AND `latest` = #{packages.latest}
+		</if>
+		<if test="packages.effect != null">
+			AND `effect` = #{packages.effect}
+		</if>
+		<if test="packages.json != null">
+			AND `json` = #{packages.json}
+		</if>
+		<if test="packages.skp != null">
+			AND `skp` = #{packages.skp}
+		</if>
+		<if test="packages.createdBy != null">
+			AND `created_by` = #{packages.createdBy}
+		</if>
+		<if test="packages.series != null">
+			AND `series` = #{packages.series}
+		</if>
+		<if test="packages.status != null">
+			AND `status` = #{packages.status}
+		</if>
+		<if test="minprice !=null">
+			<![CDATA[ and `unitprice` >= #{minprice} ]]> 
+			
+		</if>
+		<if test="maxprice !=null">
+			<![CDATA[ and `unitprice` < #{maxprice} ]]> 
+			
+		</if>
+		
+		<if test="keyword != null and  keyword != ''">
+			AND (
+			name LIKE CONCAT('%',#{keyword},'%')
+			OR
+			area
+			LIKE
+			CONCAT('%',#{keyword},'%')
+			OR
+			unitprice LIKE
+			CONCAT('%',#{keyword},'%')
+			)
+		</if>
+    </where> 
+ 
+</select>
+
+<select id="selectMaxVersionByName" resultType="java.lang.Integer">
+    select max(version) from a_packages where name=#{name}
+</select>
+ 
+</mapper>

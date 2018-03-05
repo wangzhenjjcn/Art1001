@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<title>组件</title>
+<link rel="stylesheet" href="css/reset.min.css" />
+<link rel="stylesheet" href="css/style.min.css"/>
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/suanliangpop.css" />
+<body>
+<!-- 头部 -->
+<!-- <div id="headsearch">
+    <div class="headsearch">
+        <input id="search" type="text" placeholder="搜索..." />
+    </div>
+</div> -->
+<div id="tree">
+    <div class="tree">
+        <div id="jstree"></div>
+    </div>
+</div>
+
+<!-- 修改 -->
+<div id="change">
+    <div class="creategroup2">
+        <h2>创建组件</h2>
+    </div>
+    <div class="componentwrap">
+        <input id="componentname" type="text" />
+    </div>
+    <div>
+        <div class="addprowrap">
+            <input type="button" id="addCatalogBtn" value="添加产品" />
+        </div>
+        <span class="proitem">产品项</span>
+    </div>
+    <div>
+        <div id="product">
+            <div class="f1 f11">产品</div>
+            <div class="f1 f22">算量</div>
+            <div class="f1 f33">单位</div>
+            <div class="f1 f44">删除</div>
+        </div>
+        <div id="prolist">
+            
+        </div>
+        <!-- 算量弹出层部分 -->
+         <form class="mypop none" >
+             <div class="title">算量编辑器</div>
+            <input class="slrst" type="text" value="算量表达式"/>
+            <div class="bianliang">
+                <div class="bltitle">变量</div>
+                <div class="blbox clearfix">
+                    <a href="#" class="active">灯带长度</a>
+                    <a href="#">面积</a>
+                    <a href="#">长</a>
+                    <a href="#">宽</a>
+                    <a href="#">高</a>
+                    <a href="#">数量</a>
+                    <a href="#">厚度</a>
+                    <a href="#">周长</a>
+                    <a href="#">窗帘盒长度</a>
+                </div>
+            </div>
+            <div class="calculator clearfix">
+                <span class="">(</span>
+                <span class="">)</span>
+                <span class="">=</span>
+                <span class=""><</span>
+                <span class="">></span>
+                <span class="">÷</span>
+                <span class="">×</span>
+                <span class="">+</span>
+                <span class="">-</span>
+                <i class="nor clear">clear</i>
+                <span class="">0</span>
+                <span class="">1</span>
+                <span class="">2</span>
+                <span class="">3</span>
+                <span class="">4</span>
+                <span class="">5</span>
+                <span class="">6</span>
+                <span class="">7</span>
+                <span class="">8</span>
+                <span class="nor">9</span>
+                <span class="">.</span>
+                <span class="">,</span>
+                <span class="" title="乘方">^</span>
+                <span class="" title="平方根">√￣</span>
+                <span class="">与</span>
+                <span class="">或</span>
+                <span class="">非</span>
+                <span class="">绝对</span>
+                <span class="">如果</span>
+                <span class="nor">最大</span>
+                <span class="">最小</span>
+                <span class="">平均</span>
+                <span class="">求余</span>
+                <span class="">取整</span>
+                <span class="clearall">全部清除</span>
+                <em>提示：关闭后将不保存内容！</em>
+            </div>
+            <div class="btn">
+                <input type="botton" value="取消" class="cancle"/>
+                <input type="botton" value="确认" class="submit"/>
+            </div>
+
+        </form>
+        
+    </div>
+    <div class="listbottom">
+        <button type="button" id="componentSaveBtn">保存</button>
+        <button type="button" class="close abs">关闭</button>
+    </div>
+</div>
+<!-- 创建群组 -->
+<div id="component_editor">
+    <div class="createtit">创建群组</div>
+    <div>
+        <input id="componentname2" value="" name="name" type="text" placeholder="群组名称">
+    </div>
+    <div class="saverelative">
+        <input id="createsave" type="button" value="保存" />
+        <input class="close" type="button" value="关闭" />
+    </div>
+</div>
+<!-- 创建子群组 -->
+<div id="componentchild_editor">
+    <div class="createtit">创建群组</div>
+    <div>
+        <input id="componentchild" value="" name="name" type="text" placeholder="群组名称">
+    </div>
+    <div class="saverelative">
+        <input id="createchildsave" type="button" value="保存" />
+        <input class="close" type="button" value="关闭" />
+    </div>
+</div>
+<!-- 修改群组 -->
+<div id="changegroup">
+    <div class="createtit">修改群组</div>
+    <div>
+        <input id="componentname3" value="" name="name" type="text" placeholder="群组名称">
+    </div>
+    <div class="saverelative">
+        <input id="createsave3" type="button" value="保存" />
+        <input class="close" type="button" value="关闭" />
+    </div>
+</div>
+<!-- 删除 -->
+<div id="subdel">
+    <div class="rel">
+        <p class="large">确定删除吗？</p>
+        <p class="small">删除后将不可恢复</p>
+    </div>
+    <div class="rel">
+        <a class="cancel rborder" onclick="closeDialog(event);">取消</a> <a class="confirm" onclick="confirmDelete(event);">确定删除</a>
+    </div>
+</div>
+<div id="footer">
+    <input id="btn_ok" type="button" value="确定" />
+    <input id="btn_cancel" type="button" value="取消" />
+</div>
+<input type="hidden" id="mid">
+
+
+</body>
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/jquery.cookie.js" charset="utf-8"></script>
+<script src="js/jstree.min.js"></script>
+<script src="js/module/skp/core.js" charset="utf-8"></script>
+<script src="js/module/skp/skp.js" charset="utf-8"></script>
+<script src="js/module/core/main.js" charset="utf-8"></script>
+<script src="js/module/core/user.js"></script>
+<script src="js/module/user/zujian.js"></script>
+</html>

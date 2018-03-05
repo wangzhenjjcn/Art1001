@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aladdin.model.mapper.ModelFunctionMapper" >
+  <resultMap id="BaseResultMap" type="com.aladdin.model.entity.ModelFunction" >
+    <id column="model_id" property="modelId" jdbcType="VARCHAR" />
+    <id column="function" property="function" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.aladdin.model.entity.ModelFunction" >
+    delete from a_model_functions
+    where model_id = #{modelId,jdbcType=VARCHAR}
+      and function = #{function,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.aladdin.model.entity.ModelFunction" >
+    insert into a_model_functions (model_id, function)
+    values (#{modelId,jdbcType=VARCHAR}, #{function,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aladdin.model.entity.ModelFunction" >
+    insert into a_model_functions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        model_id,
+      </if>
+      <if test="function != null" >
+        function,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="function != null" >
+        #{function,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByModelId" resultMap="BaseResultMap">
+  	select model_id,function from a_model_functions where model_id = #{modelId}
+  </select>
+  
+  
+</mapper>

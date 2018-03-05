@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通用规则</title>
+    <link rel="stylesheet" href="css/common.css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/tongy_rule.css" charset="utf-8"/>
+    <script src="js/jquery-1.12.1.min.js" charset="utf-8"></script>
+    <script src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script src="js/module/core/main.js" charset="utf-8"></script>
+    <script src="js/module/core/user.js" charset="utf-8"></script>
+    <script src="js/module/skp/core.js" charset="utf-8"></script>
+    <script src="js/module/skp/skp.js" charset="utf-8"></script>
+    <script src="js/module/rule/tongy_rule.js" charset="utf-8"></script>
+    <script src="js/juicer-min.js" charset="utf-8"></script>
+
+</head>
+<body>
+    <div class="tongY_rule">
+        <div class="ty_header">
+            <p>规则列表</p>
+            <h2 id="addrule">新建</h2>
+        </div>
+        <div id="m_tpl" class="tongY_content">
+            <script id="tpl" type="text/juicer">
+            <table>
+                    <tr class="heading">
+                        <th>序号</th>
+                        <th>名称</th>
+                        <th>编辑</th>
+                        <th class="last_no">删除</th>
+                    </tr>
+
+
+                {@each data as it,index}
+                    <tr>
+                        <td>${index}</td>
+                        <td>${it.name}</td>
+                        <td class="editor" >
+                            <img src="images/tongy_rule/rule_editor.png" alt="${it.id}"/>
+                        </td>
+                        <td class="rule last_no">
+                            <img src="images/tongy_rule/rule_del.png" alt="${it.id}"/>
+                        </td>
+                    </tr>
+                {@/each}
+
+                </table>
+                </script>
+        </div>
+    </div>
+</body>
+</html>

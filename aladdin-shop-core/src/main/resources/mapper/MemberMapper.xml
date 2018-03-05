@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aladdin.member.mapper.MemberMapper">
+	<resultMap id="BaseResultMap" type="com.aladdin.member.entity.Member" >
+	<id column="member_id" property="id" jdbcType="CHAR" />
+	<result column="member_name" property="name" jdbcType="VARCHAR" />
+	<result column="member_truename" property="truename" jdbcType="VARCHAR" />
+	
+	
+	<result column="member_email" property="email" jdbcType="VARCHAR" />
+	<result column="member_mobile" property="mobile" jdbcType="VARCHAR" />
+	<result column="member_passwd" property="password" jdbcType="VARCHAR" />
+	<result column="member_sex" property="sexCode" jdbcType="INTEGER" />
+	<result column="member_avatar" property="avater" jdbcType="VARCHAR" />
+	<result column="member_birthday" property="memberBirthday" jdbcType="BIGINT" />	
+	<result column="member_areainfo" property="location" jdbcType="VARCHAR" />
+    <result column="is_buy" property="isBuy" jdbcType="TINYINT" />
+    <result column="is_del" property="isDel" jdbcType="TINYINT" />
+
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    member_id, member_name, member_truename,member_email, member_mobile, member_passwd,member_sex ,member_avatar,member_birthday,
+    is_del, is_buy,member_areainfo
+  </sql>
+  
+  <select id="selectByMemberinfo" resultMap="BaseResultMap">
+  	SELECT 
+  	<include refid="Base_Column_List"/>
+  	FROM shop_member 
+  	WHERE (member_name = #{memberName} OR member_mobile =#{memberName}) 
+  	<if test="password!=null and password!=''">
+  		AND member_passwd = #{password}
+  	</if>
+  	<if test="isBuy!=null">
+  		and is_buy=#{isBuy}
+  	</if>
+  	and is_del=0
+  </select>
+  
+  
+	
+</mapper>

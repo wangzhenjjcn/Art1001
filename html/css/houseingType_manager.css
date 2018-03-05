@@ -1,0 +1,349 @@
+@charset "utf-8";
+
+.houseType_box{
+    width: 915px;
+    height: 470px;
+    margin: 0 auto;
+    background: #f1f1f3;
+    position: relative;
+}
+.houseType_header{
+    height: 45px;
+    border-bottom: solid 1px #c0c0c0;
+    background: #fff;
+}
+.houseType_header p{
+    line-height: 45px;
+    font-size: 16px;
+    color: #5d5d5d;
+    padding-left: 10px;
+    float: left;
+}
+.houseType_header img{
+    padding: 8px 0 0 13px;
+    float: left;
+}
+.houseType_header a{
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: #00a0e9;
+    display: block;
+    float: right;
+    color: #fff;
+    margin:10px 44px 0 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+.houseType_nav{
+    height: 60px;
+}
+/*三个状态的高亮*/
+.houseType_nav.high0{
+    background:#fff url("../images/housingType/all-icon.png")left bottom no-repeat;
+    background-size: 915px 15px;
+    z-index: 99;
+}
+.houseType_nav.high1{
+    background:#fff url("../images/housingType/pass_icon.png")left bottom no-repeat;
+    background-size: 915px 15px;
+    z-index: 99;
+}
+.houseType_nav.high2{
+    background:#fff url("../images/housingType/noPass_icon.png")left bottom no-repeat;
+    background-size: 915px 15px;
+    z-index: 99;
+}
+.houseType_nav ul{
+    padding-top: 13px;
+    float: left;
+}
+.houseType_nav ul li{
+    float: left;
+    width: 66px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 28px;
+    color:#fff;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.houseType_nav ul li.qb{
+    background: #00a0ea url("../images/housingType/icon111.png") 10px center no-repeat;
+    background-size:12px 12px;
+}
+.houseType_nav ul li.tg{
+    background: #54c944 url("../images/housingType/icon2.png") 10px center no-repeat;
+    background-size:14px 14px;
+}
+.houseType_nav ul li.wtg{
+    background: #fc4273 url("../images/housingType/icon333.png") 10px center no-repeat;
+    background-size:13px 13px;
+}
+.houseType_nav ul li a{
+    color:#fff;
+}
+.houseType_nav h2{
+    float: right;
+    margin:16px 50px 0 0;
+    position: relative;
+}
+.houseType_nav h2 label{
+    color: #383838;
+    width: 50px;
+    padding-right: 20px;
+    height: 22px;
+    line-height: 22px;
+    background: url("../images/housingType/time_icon.png") right center no-repeat;
+    background-size:16px 14px;
+    cursor: pointer;
+}
+.houseType_nav h2 input{
+    width: 90px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 4px;
+    color: #a8a8a8;
+    border: solid 1px #c1c1c1;
+    margin-left: 2px;
+}
+/*筛选列表*/
+.choose{
+    width: 70px;
+    height: 70px;
+    border: solid 1px #ddd;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 999;
+}
+.choose p.first{
+    padding-top: 5px;
+}
+.choose p.last{
+    border-bottom: none;
+}
+.choose p{
+    line-height: 20px;
+    font-size: 14px;
+    color: #383838;
+    text-align: center;
+    border-bottom: dotted 1px #ddd;
+    cursor: pointer;
+}
+
+/*内容区开始*/
+.houseType_content{
+    width: 840px;
+    height: 312px;
+    margin: 0 auto;
+}
+.houseType_content dl{
+    width: 196px;
+    height: 257px;
+    background: #fff;
+    border-bottom: dashed 1px #c4c4c4;
+    float: left;
+    margin-right: 18px;
+    margin-top: 15px;
+}
+.houseType_content dl.margin_no{
+    margin-right: 0;
+}
+.houseType_content dl dt{
+    width: 196px;
+    height: 148px;
+    position: relative;
+}
+.houseType_content dl dt img{
+    width: 100%;
+    height: 100%;
+}
+.houseType_content dl dt p{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    /*filter:alpha(opacity=50);*/
+    display: none;
+    cursor: pointer;
+}
+.houseType_content dl dt p span{
+    width: 28px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 14px;
+    background: url("../images/housingType/del.png")left center no-repeat;
+    background-size: 20px 20px;
+    color: #fff;
+    padding-left: 26px;
+    margin-top: 10px;
+}
+.houseType_content dl dt p .editor{
+    background: url("../images/housingType/edit.png")left center no-repeat;
+}
+.houseType_content dl dt p b{
+    height: 34px;
+    width: 100%;
+    display: block;
+}
+.houseType_content dl dt p b span{
+    float: left;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.houseType_content dl dt p b span.editor{
+    float: right;
+    margin-right: 6px;
+}
+.houseType_content dl dt p a{
+    height: 25px;
+    width: 25px;
+    display: block;
+    background: url("../images/housingType/l_download.png") no-repeat;
+    background-size: 25px 25px;
+    margin: 0 auto;
+    margin-top: 32px;
+}
+
+.houseType_content dl dd h2{
+    font-size: 14px;
+    color: #383838;
+    padding-left: 5px;
+    margin: 12px 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.houseType_content dl dd h3{
+    font-size: 12px;
+    color: #6e6e6e;
+    padding-left: 5px;
+    line-height: 20px;
+}
+.houseType_content dl dd h4{
+    font-size: 12px;
+    color: #6e6e6e;
+    line-height: 20px;
+    padding-left: 5px;
+}
+.houseType_content dl dd h5{
+    font-size: 12px;
+    color: #6e6e6e;
+    padding-left: 5px;
+    line-height: 20px;
+}
+.houseType_content dl dd h5 span{
+    margin-right: 10px;
+}
+/*分页*/
+.houseType_page{
+    width: 348px;
+    height: 38px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.houseType_page a{
+    width: 95px;
+    height: 38px;
+    display: block;
+}
+
+.houseType_page a.left{
+    float: left;
+}
+.houseType_page ul{
+    width: 145px;
+    padding-top: 5px;
+    height: auto;
+    overflow: hidden;
+    /*background: rosybrown;*/
+    margin: 0 auto;
+    float: left;
+}
+.houseType_page ul li{
+    float: left;
+    width: 29px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    cursor: pointer;
+}
+.houseType_page ul li.active{
+    background: #fed82f;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+
+}
+.houseType_page a.right{
+    float: left;
+}
+/*编辑户型*/
+.editorBomb{
+    position: absolute;
+   /* top: 50%;*/
+    /* margin-top: -264px;*/
+    top:5%;
+    left: 50%;
+    margin-left: -185px;
+    background: #fff;
+    z-index: 99;
+    display: none;
+}
+/*删除*/
+#subdel{
+    padding-top:20px;
+    display:none;
+    position:absolute;
+    left:50%;
+    top:30%;
+    border-radius:4px;
+    width:230px;
+    height:127px;
+    border:1px solid #eee;
+    margin-left: -100px;
+    margin-top: -60px;
+    border-bottom:3px solid #f3d924;
+    background:#fff;
+}
+#subdel p{
+    text-align:center;
+}
+#subdel .rel{
+    padding-top:22px;
+}
+#subdel .large{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#subdel .small{
+     color:#999;
+     font-size:12px;
+}
+#subdel .rel a{
+    position: relative;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width: 114px;
+    height: 38px;
+    line-height: 38px;
+    border-top: 1px #eee solid;
+    color: #f3d924;
+    font-size: 14px;
+    border-radius:3px;
+}
+#subdel .rel a:hover{
+    background:#eee;
+}
+.rborder{
+    border-right:1px solid #eee;
+}

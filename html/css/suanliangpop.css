@@ -1,0 +1,25 @@
+/*
+* @Author: art1001u1
+* @Date:   2016-11-02 10:06:34
+* @Last Modified by:   art1001u1
+* @Last Modified time: 2016-11-07 16:52:06
+*/
+*{box-sizing:border-box;text-decoration:none;color:#000;}
+.none{display:none;}
+.markall{position:absolute; top:0; left:0; width:100%; z-index:998; background:rgba(0,0,0,0.5)}
+.mypop{position:absolute;width:96%;margin:0 auto;top:50%;left:50%;/* margin-left:8px; */border-radius:10px;background:#fff;}
+.mypop .title{width:100%;height:40px;padding-left:10px;font-size:16px;line-height:40px;background:#edebec;}
+.mypop .slrst{width:95%;margin:12px 20px 25px 10px;padding-left:10px;height:30px;border:1px solid #ccc;font-size:12px;color:#ccc;border-radius:4px;}
+.mypop .bianliang{font-size:12px;}
+.mypop .bianliang .bltitle{padding-left:10px;}
+.mypop .bianliang .blbox{width:95%;margin:6px 10px 10px;padding:10px 0 10px 10px;border:1px solid #ccc;border-radius:4px;}
+.mypop .bianliang .blbox a{display:block;float:left;padding:2px 4px;margin-right:8px;}
+.mypop .bianliang .blbox a.active{background:#eae8e9;}
+.mypop .calculator{padding:0 10px;font-size:12px;}
+.mypop .calculator span,.mypop .calculator i{display:block;float:left;width:30px;height:30px;text-align:center;line-height:30px;margin:0px 6px 6px 0px;border:1px solid #ccc;border-radius:4px;cursor:pointer;}
+.mypop .calculator span.nor,.mypop .calculator i.nor{margin-right:0;}
+.mypop .calculator span.clearall{margin-left:20px;line-height:14px;font-size:10px;}
+.mypop .calculator em{float:right;line-height:30px;color:#aaa;}
+.mypop .btn{margin:46px 0 20px 70px;}
+.mypop .btn input{width:100px;height:30px;margin-right:40px;text-align:center;font-size:14px;border:1px solid #cdcdcd;cursor:pointer;}
+.mypop .btn input:last-child{color:#fff;background:#0082c9;};

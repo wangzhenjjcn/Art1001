@@ -1,0 +1,167 @@
+@charset "utf-8";
+.radius{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+.update_houseType{
+    width: 370px;
+    height: 528px;
+    margin: 50px auto;
+    border: solid 1px #c0c0c0;
+}
+.update_header{
+    height: 43px;
+    line-height: 43px;
+    font-size: 16px;
+    border-bottom: solid 1px #c0c0c0;
+    color: #373737;
+    padding-left: 7px;
+}
+.update_content{
+    height: auto;
+    overflow: hidden;
+}
+.update_content form p{
+    height: 28px;
+    width: 370px;
+    margin-top: 18px;
+}
+.update_content form h3{
+    height: 28px;
+    width: 370px;
+    margin-top: 18px;
+}
+.update_content form h4{
+    height: 28px;
+    width: 370px;
+    margin-top: 18px;
+}
+.update_content form label{
+    width: 86px;
+    height: 28px;
+    line-height: 28px;
+    text-align: right;
+    color: #383838;
+    font-size: 14px;
+    display: block;
+    float: left;
+    margin-right: 15px;
+}
+.update_content form p input{
+    height: 28px;
+    width: 242px;
+    border: solid 1px #c7c7c7;
+    float: left;
+    padding: 0 5px;
+    color: #383838;
+    outline: none;
+}
+.update_content form p input:hover{
+    border: solid 1px #0082c9;
+    -webkit-box-shadow: 0 0 5px #0082c9;
+    -moz-box-shadow: 0 0 5px #0082c9;
+    -ms-box-shadow: 0 0 5px #0082c9;
+    box-shadow: 0 0 5px #0082c9;
+}
+.update_content form p input.area_w{
+    width: 180px;
+}
+.update_content form p span{
+    padding-left: 22px;
+    color: #959595;
+    font-size: 18px;
+}
+.update_content form select{
+    border: solid 1px #c7c7c7;
+    float: left;
+    padding: 0 5px;
+    color: #383838;
+    outline: none;
+}
+.update_content form p select{
+    height: 28px;
+    width: 252px;
+}
+.update_content form h3 select{
+    height: 28px;
+    width: 80px;
+    float: left;
+    margin-right: 6px;
+}
+.update_content form select:hover{
+    border: solid 1px #0082c9;
+    -webkit-box-shadow: 0 0 5px #0082c9;
+    -moz-box-shadow: 0 0 5px #0082c9;
+    -ms-box-shadow: 0 0 5px #0082c9;
+    box-shadow: 0 0 5px #0082c9;
+}
+.update_content form h4 input{
+     width: 113px;
+    height: 24px;
+    margin-left: -113px;
+    opacity: 0;
+    cursor: pointer;
+}
+.update_content form h4 a{
+    width: 77px;
+    height: 24px;
+    padding-left: 36px;
+    line-height: 24px;
+    display: block;
+    float: left;
+    color: #fefffd;
+    background: #00a0e8 url("../images/update_img.png") 16px center no-repeat;
+    background-size: 15px 13px;
+    font-size: 12px;
+    margin: 2px 0;
+    cursor: pointer;
+}
+.update_content form h4 span{
+    font-size: 12px;
+    color: #969696;
+    line-height: 28px;
+    padding-left: 6px;
+}
+.update_content form h5{
+    width: 334px;
+    height: 92px;
+    background: #e8e6e7;
+    margin: 18px auto 29px;
+}
+.update_content form h5 img{
+    width: 100%;
+    height: 100%;
+}
+.update_content form h6{
+    width: 370px;
+}
+.update_content form h6 a{
+    width: 100px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+}
+.update_content form h6 a.away_btn{
+    height: 31px;
+    line-height: 31px;
+    border: solid 1px #cecece;
+    color: #6f6f6f;
+    margin-left: 51px;
+}
+.update_content form h6 a.finish_btn{
+    height: 33px;
+    line-height: 33px;
+    background: #0082c9;
+    color: #fff;
+    margin-left: 68px;
+}
+.update_content form h6 a.away_btn:hover{
+    background: #eee;
+}
+.update_content form h6 a.finish_btn:hover{
+    background: #072672;
+
+}

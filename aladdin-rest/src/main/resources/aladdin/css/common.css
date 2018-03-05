@@ -1,0 +1,5 @@
+body{background:#FFFFFF;font:12px/1.5 "Helvetica","Arial","Microsoft YaHei";color:#1e1e1e;}body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0 auto;padding:0;font-size:12px}button,input,select,textarea{font:100% "Microsoft YaHei",sans-serif}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul,ol{list-style:none}fieldset,img{border:0}sup{vertical-align:text-top}sub{vertical-align:text-bottom}table{border-collapse:collapse;border-spacing:0}a{text-decoration:none}img{border:0;}input{border:0;}
+.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both;}
+.clearfix {zoom:1;}
+.clearit {clear:both; height:0; font-size:0; overflow:hidden;}
+img{display:block;}

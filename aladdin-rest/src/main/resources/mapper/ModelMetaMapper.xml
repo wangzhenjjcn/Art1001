@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aladdin.model.mapper.ModelMetaMapper">
+	<resultMap id="BaseResultMap" type="com.aladdin.model.entity.ModelMeta">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="object_id" jdbcType="VARCHAR" property="objectId" />
+		<result column="meta_key" jdbcType="VARCHAR" property="key" />
+		<result column="meta_value" jdbcType="VARCHAR" property="value" />	
+		<result column="meta_priority" jdbcType="VARCHAR" property="priority" />	
+	</resultMap>
+	<select id="selectMds" parameterType="String" resultMap="BaseResultMap">
+		select id,object_id,meta_key,meta_value,meta_priority
+		from a_models_metas where object_id = #{id}
+	</select>
+</mapper>

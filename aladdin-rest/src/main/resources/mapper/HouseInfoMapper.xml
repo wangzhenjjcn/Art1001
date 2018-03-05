@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aladdin.house.mapper.HouseInfoMapper">
+	<resultMap id="BaseResultMap" type="com.aladdin.house.entity.HouseInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="community_name" property="communityName" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="house_type_id" property="houseTypeId" jdbcType="INTEGER" />
+    <result column="attachment_uri" property="attachmenturi" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+  	<result column="designer_id" property="designerId" jdbcType="VARCHAR" />
+  	<result column="location" property="location" jdbcType="VARCHAR" />
+  	<result column="house_pic_uri" property="housePicUri" jdbcType="VARCHAR" />
+  	<result column="upload_uri" property="uploadUri" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="FLOAT" />
+    <result column="state" property="state" jdbcType="TINYINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="location_id" property="locationId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Joind_Column_List" >
+    id,house_pic_uri,upload_uri, community_name, name,house_type_id, attachment_uri,create_time,designer_id,location,area,state,status,location_id
+  </sql>
+  <select id="findHouseInfos" resultMap="BaseResultMap">
+  	SELECT 
+	<include refid="Joind_Column_List" />
+	FROM housestyle 
+	<where>
+	    1=1 
+		<if test="params!=null and params.keyword != null and params.keyword != ''" >
+        	AND (community_name LIKE concat("%",#{params.keyword},"%") OR housestyle.name LIKE concat("%",#{params.keyword},"%"))
+    	</if>
+    	<if test="params!=null and params.areas_min != null" >
+	         and housestyle.area &gt;= #{params.areas_min} 
+	    </if>
+    	<if test="params!=null and params.areas_max != null" >
+	         and housestyle.area &lt;= #{params.areas_max}
+	    </if>
+	    <if test="params!=null and params.houseType != null and params.houseType != ''" >
+	         and housestyle.house_type_id = #{params.houseType}
+	    </if>
+	    <if test="params!=null and params.level != null and params.level=='sheng'" >
+	         and housestyle.location_id1 = #{params.area}
+	    </if>
+	    <if test="params!=null and params.level != null and params.level=='shi'" >
+	         and housestyle.location_id2 = #{params.area}
+	    </if>
+	    <if test="params!=null and params.level != null and params.level=='qu'" >
+	         and housestyle.location_id = #{params.area}
+	    </if>
+	    <if test="params!=null and params.state != null and params.state != '-1'" >
+	         and housestyle.state = #{params.state}
+	    </if>
+	    <if test="params!=null and params.designerId != null and params.designerId != ''" >
+	         and designer_id = #{params.designerId}
+	    </if>
+  		<if test="params!=null and params.status != null" >
+	         and housestyle.status = #{params.status}
+	    </if>
+	         and housestyle.is_del = 1
+	</where>
+		<if test="params!=null  and params.timeSort!=null">
+			order by create_time ${params.timeSort}
+		</if>
+  		limit #{params.pageIndex,jdbcType=INTEGER},#{params.pageSize,jdbcType=INTEGER}
+  </select>
+  
+  <select id="findHouseInfoCount" resultType="java.lang.Integer">
+  	SELECT 
+	count(id)
+	FROM housestyle 
+	<where>
+	    1=1 
+    	<if test="params!=null and params.areas_min != null" >
+	         and housestyle.area &gt;= #{params.areas_min} 
+	    </if>
+    	<if test="params!=null and params.areas_max != null" >
+	         and housestyle.area &lt;= #{params.areas_max}
+	    </if> 
+	    <if test="params!=null and params.houseType != null and params.houseType != ''" >
+	         and housestyle.house_type_id = #{params.houseType}
+	    </if>
+	    
+	    
+	    <if test="params!=null and params.level != null and params.level=='sheng'" >
+	         and housestyle.location_id1 = #{params.area}
+	    </if>
+	    <if test="params!=null and params.level != null and params.level=='shi'" >
+	         and housestyle.location_id2 = #{params.area}
+	    </if>
+	    <if test="params!=null and params.level != null and params.level=='qu'" >
+	         and housestyle.location_id = #{params.area}
+	    </if>
+	    
+	    
+	    <if test="params!=null and params.state != null and params.state != '-1'" >
+	         and housestyle.state = #{params.state}
+	    </if>
+	    <if test="params!=null and params.designerId != null and params.designerId != ''" >
+	         and designer_id = #{params.designerId}
+	    </if>
+  		<if test="params!=null and params.status != null" >
+	         and housestyle.status = #{params.status}
+	    </if>
+	         and housestyle.is_del = 1
+	         
+	    <if test="params!=null and params.keyword != null and params.keyword != ''" >
+        	AND (community_name LIKE concat("%",#{params.keyword},"%") OR housestyle.name LIKE concat("%",#{params.keyword},"%"))
+    	</if>
+	    
+	</where>
+
+  </select>
+  
+  
+</mapper>

@@ -1,0 +1,377 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云库-套餐</title>
+    <link rel="stylesheet" href="css/yunku.css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/intDOM.js" charset="utf-8"></script>
+    <script src="js/module/core/main.js" charset="utf-8"></script>
+    <script src="js/module/core/user.js" charset="utf-8"></script>
+    <script src="//cdn.bootcss.com/juicer/0.6.14/juicer-min.js"></script>
+    <script src="js/module/skp/core.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/module/skp/skp.js" charset="utf-8"></script>
+    <style>
+    	p{margin:0;}
+        .d00{
+            width: 240px;
+            height: 461px;
+            background: gold;
+            overflow: hidden;
+        }
+        #html img{
+        	border-radius: 6px 6px 0 0;
+       		width: 100%;
+    		height: initial;
+        }
+        .taoxia_1{
+        	height:5px;
+        }
+        .xiala p:hover{
+        background:#f3d924;
+        color:#fff;
+        }
+        .taoxia_2a{
+        background-image:none !important;
+        }
+        .taoxia_2a .col-xs-6{
+        padding:0;
+        }
+        .taoxia_wrap{
+	        margin-top: 8px;
+		    width: 200px;
+		    margin: auto;
+            margin-top: 8px;
+        }
+        .taoxia_2a{
+		    width: 200px;
+		    margin: auto;
+        }
+        .designer_icon{ 
+        width:14px !important;
+        height:15px !important;
+        border-radius: 16px !important;}
+        .taoxia_2a{
+        margin-top:0px;}
+        .taoxia_2a .p1 {
+        height:21px;
+        overflow:hidden;
+        padding-top: 0px;
+	    margin-top: 4px;
+	    margin-left: 4px;
+		}
+		        .taoxia{
+        background:#E7ECEA;
+        }
+		.glyphicon-map-marker{
+		    color: #CBE;
+		    padding-right: 1px;
+		    }
+		    .taoxia_wrap .col-xs-3{
+		    margin:0;
+		    }
+		    .aladdin-content .taoxia_1{
+		    	background:#fff;
+		    	height:36px;
+		    }
+		    		    #html {
+    padding-bottom: 0;}
+    	.btn-group>.btn-group{
+		width:33%;
+	}	 	
+		
+		.btn-group>.btn, .btn-group-vertical>.btn{
+		width:100%;
+		}
+		#html .mCSB_container{
+		    padding-bottom: 100px;
+		} 
+		.danyou{
+		    position: relative;}
+		.menu-one{
+		    width: 300%;
+		    position: absolute;
+		    left: 0;
+		}
+		.menu-two{
+		    width: 300%;
+		    position: absolute;
+		    left: -100% !important;
+		} 
+		.menu-three{
+		    width: 300%;
+		    position: absolute;
+		    left: -200% !important;
+		} 
+		.btn-group button{
+		    color: #0080cc;
+			font-size:12px;
+		}	
+		#cityHtml{
+		height:300px !important;
+		overflow-y:scroll;
+		}
+    </style>
+<script id="tpl" type="text/template">
+    {@each records as it,index}
+	    <div class="${'taoxia_wrap'}" onclick="skp_down_home_house('${it.attachmenturi}')">
+	    	<img src="${it.housePicUri}" alt=""/>
+		</div>
+	    <div class="taoxia_2a">
+			<div class="row">
+ 				<div class="col-xs-6">
+					<p class="p1"><span>${it.name}</span></p>
+				</div>
+  				<div class="col-xs-6">
+					<p class="p1">面积：<span>${it.area}m&sup2</span></p>
+				</div>
+			</div>
+			<div class="row">
+ 				<div class="col-xs-6">
+					<p class="p2"><span><img class="designer_icon" src="images/designer_icon.png">DIM设计</span></p>
+				</div>
+  				<div class="col-xs-6">
+					<p class="p2"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></p>
+				</div>
+			</div>
+        	
+       	</div>
+	{@/each}
+</script>
+<script id="citytpl" type="text/template">
+	 <li><a href="#"><span class="menu-text">全部</span></a></li>
+    {@each data as it,index}
+		<li rel="${it.id}"><a href="#"><span class="menu-text">${it.name}</span></a></li>	
+	{@/each}
+</script>
+</head>
+<body>
+<div class="aladdin-link">
+	<div class="btn-group">
+		<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		户型库<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="pingmiantuku.html">平面图库</a></li>
+			<li><a href="taocan.html">套餐</a></li>
+			<li><a href="huxingku.html">户型库</a></li>
+			<li><a href="moxingye.html">单品模型</a></li>
+		</ul>
+	</div>	
+</div>
+<div class="aladdin-content">
+	<div class="taoxia" >
+				<div class="btn-group" style="padding-left: 1%;width: 100%;">   	       	
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					  <span class="but-text">城市</span>
+					  <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu menu-one" id="cityHtml" role="menu">
+					  <li><a href="#"><span class="menu-text">全部</span></a></li>
+					  <li><a href="#"><span class="menu-text">1-59㎡</span></a></li>	
+					</ul>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					  <span class="but-text">户型</span>
+					  <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu menu-two" role="menu">
+					  <li rel='0'><a href="#"><span class="menu-text">全部</span></a></li>
+					  <li rel='1'><a href="#"><span class="menu-text">一居</span></a></li>
+					  <li rel='2'><a href="#"><span class="menu-text">二居</span></a></li>
+					  <li rel='3'><a href="#"><span class="menu-text">三居</span></a></li>
+					  <li rel='4'><a href="#"><span class="menu-text">四居</span></a></li>
+					  <li rel='5'><a href="#"><span class="menu-text">五居</span></a></li>
+					  <li rel='6'><a href="#"><span class="menu-text">其他</span></a></li>				  
+					</ul>
+				</div>
+			
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					  <span class="but-text">面积</span>
+					  <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu menu-three" role="menu">
+					  <li><a href="#"><span class="menu-text">全部</span></a></li>
+					  <li><a href="#"><span class="menu-text">1-59㎡</span></a></li>	
+					  <li><a href="#"><span class="menu-text">1-59㎡</span></a></li>					
+					  <li><a href="#"><span class="menu-text">60-80㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">81-105㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">106-120㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">121-150㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">151-220㎡</span></a></li>	
+					  <li><a href="#"><span class="menu-text">221-250㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">251-300㎡</span></a></li>	
+					  <li><a href="#"><span class="menu-text">301-500㎡</span></a></li>
+					  <li><a href="#"><span class="menu-text">501-1000㎡</span></a></li>	
+					  <li><a href="#"><span class="menu-text">其他</span></a></li>		  					  
+					</ul>
+				</div>
+			</div>
+        <div class="taoxia_1 row" style="display:none;">
+            <div class="taoxia_1a col-xs-3">
+                <a href="#"><span class="glyphicon glyphicon-map-marker"></span>城市</a>
+            </div>
+            <div class="taoxia_1b col-xs-3">
+                <a href="#">户型</a>
+            </div>
+            <div class="taoxia_1c col-xs-3">
+                <a href="#">面积</a>
+            </div>
+            <div class="taoxia_1d col-xs-3">
+                <a href="#">收藏</a>
+            </div>
+        </div>
+        <!--下拉-->
+        <div class="xiala2">
+            <div class="xiala2_1">
+                <p class="p1" >5-10/万</p>
+                <p class="p2" >11-30/万</p>
+            </div>
+            <div class="xiala2_2">
+                <p class="p3" >31-50/万</p>
+                <p class="p4" >51-90/万</p>
+            </div>
+            <div class="xiala2_3">
+                <p class="p5">100万以上</p>
+                <p class="p6">11-30/万</p>
+            </div>
+        </div>
+        <div id="html"></div>
+    </div>
+	     	<div class="pager">
+			    <div class="btn btn-default prev"><a href="#">上一页</a></div>
+			    <span class="pager-page">
+			    	<span class="now">1</span>/<span class="total">5</span>
+			    </span>
+			    <div class="btn btn-default next"><a href="#">下一页</a></div>
+			</div>
+</div>
+<script>
+ 	var IsmCustomScrollbar = false; 
+	var total = 1;//总行数
+	var pagesize= 5; //每次请求行数
+	var maxPages = Math.floor(total/pagesize)+((total % pagesize)==0?0:1);//总页数
+	var pageNum = 1;//当前页数
+	var areaid = ''; //cityId
+	var areaStr = '';//面积 
+	var style = ''; //风格
+	var houseType = ''//
+	var type = 1;
+	var postData = {};
+	postData.pageSize = pagesize;//每次请求行数
+	//postData.pageNum = pageNum;//当前页数
+	postData.type = type;
+	intHtml(postData);
+	function intHtml(data){
+        var obj = data;
+        var url = houseType_manager_url;
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+            //console.log(response);
+            var response = my_eval(response);
+            total = response.count;
+            pageNum = response.pageNo;
+            maxPages = Math.floor(total/pagesize)+((total % pagesize)==0?0:1);
+            $('.pager-page .total').text(maxPages);
+            $('.pager-page .now').text(response.pageNo);
+            if(maxPages<=pageNum){
+            	$('.next').addClass('disabled');	
+            }else{
+            	$('.next').removeClass('disabled');
+            }
+            if(pageNum==1){
+            	$('.prev').addClass('disabled');	
+            }else{
+            	$('.prev').removeClass('disabled');
+            }
+            var tpl = document.getElementById('tpl').innerHTML;
+            var html = juicer(tpl, response);
+            if(IsmCustomScrollbar){
+            	document.getElementById('mCSB_1_container').innerHTML = html; 
+            }else{
+                document.getElementById('html').innerHTML = html;         	
+            }
+            setTimeout("intHeight($(window).height());",100);
+        });
+	}
+
+    $('.prev').on('click', function (e) {
+    	//上一页
+    	debugger;
+    	pageNum--;
+    	postData.pageNo = pageNum;
+    	intHtml(postData);
+    	});
+    $('.next').on('click', function (e) {
+    	//下一页
+    	debugger;
+    	pageNum++;
+    	postData.pageNo = pageNum;
+    	intHtml(postData);
+    	});	
+    function intCity(){
+    	var obj = {};
+    	var url = server_url+'/api/v1/city/list/0';
+        $.fn.mypost(url,obj,getUserToken(),function(response){
+        	var response = my_eval(response);
+        	var tpl = document.getElementById('citytpl').innerHTML;
+        	var html = juicer(tpl, response);
+        	document.getElementById('cityHtml').innerHTML = html;
+        	setTimeout("bindAction();",200);
+        })
+    }
+    setTimeout("intCity();",200);
+	function bindAction(){
+		$('.btn-group .menu-one li').on('click', function (e) {
+    		//城市
+    		debugger;
+    		var areaText = $(this).children().text();
+    		areaid = $(this).attr('rel');
+    		$(this).parent().parent().find('.but-text').text(areaText);
+    		postData.area = areaid;
+    		if(areaText=='全部'){
+    			delete postData.area;
+    			$(this).parent().parent().find('.but-text').text('城市');
+    		}
+    		intHtml(postData);
+    		});
+    	$('.btn-group .menu-two li').on('click', function (e) {
+    		//户型
+    		debugger;
+    		var houseTypeText = $(this).children().text();
+    		houseType = $(this).attr('rel');
+    		$(this).parent().parent().find('.but-text').text(houseTypeText);
+    		postData.houseType = houseType;
+    		if(houseTypeText=='全部'){
+    			delete postData.houseType
+    			$(this).parent().parent().find('.but-text').text('户型');
+    		}
+    		intHtml(postData);
+    		});
+	}
+	$('.btn-group .menu-three li').on('click', function (e) {
+		//面积
+		debugger;
+		areaStr = $(this).children().text();
+		$(this).parent().parent().find('.but-text').text(areaStr);
+		postData.areaStr = areaStr;
+		if(areaStr=='全部'){
+			delete postData.areaStr
+			$(this).parent().parent().find('.but-text').text('面积');
+		}
+		intHtml(postData);
+		});
+	$(document).ready(function(){ 
+		intDOM();
+		}); 
+</script>
+</body>
+</html>

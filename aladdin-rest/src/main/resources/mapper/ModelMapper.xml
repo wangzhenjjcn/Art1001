@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aladdin.model.mapper.ModelMapper">
+	<resultMap id="BaseResultMap" type="com.aladdin.model.entity.Model">
+		<id column="id" jdbcType="CHAR" property="id" />
+		<result column="code" jdbcType="VARCHAR" property="modelCode" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="abbreviation" jdbcType="VARCHAR" property="abbreviation" />
+		<result column="brand" jdbcType="VARCHAR" property="brand" />
+		<result column="modelnumber" jdbcType="VARCHAR" property="modelnumber" />
+		<result column="weight" jdbcType="INTEGER" property="weight" />
+		<result column="unit" jdbcType="VARCHAR" property="unit" />
+		<result column="category_id" jdbcType="CHAR" property="categoryId" />
+		<result column="category_id1" jdbcType="CHAR" property="categoryId1" />
+		<result column="category_id2" jdbcType="CHAR" property="categoryId2" />
+		<result column="style" jdbcType="VARCHAR" property="style" />
+		<result column="color" jdbcType="VARCHAR" property="color" />
+		<result column="length" jdbcType="DECIMAL" property="length" />
+		<result column="width" jdbcType="DECIMAL" property="width" />
+		<result column="height" jdbcType="DECIMAL" property="height" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="material" jdbcType="VARCHAR" property="material" />
+		<result column="auto_apply" jdbcType="TINYINT" property="autoApply" />
+		<result column="unitprice" jdbcType="DOUBLE" property="unitprice" />
+		<result column="comefrom" jdbcType="TINYINT" property="comefrom" />
+		<result column="state" jdbcType="TINYINT" property="state" />
+		<result column="accessibility" jdbcType="TINYINT" property="accessibility" />
+		<result column="created_by" jdbcType="CHAR" property="createdBy" />
+		<result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="modified_by" jdbcType="CHAR" property="modifiedBy" />
+		<result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+		<result column="status" jdbcType="TINYINT" property="status" />
+		<result column="thumb" jdbcType="VARCHAR" property="thumb" />
+		<result column="skp" jdbcType="VARCHAR" property="skp" />
+	</resultMap>
+	<resultMap id="RelationResultMap" extends="BaseResultMap" type="com.aladdin.model.entity.Model">
+		<collection property="metaDatas" column="id" select="com.aladdin.model.mapper.ModelMetaMapper.selectMds">
+		</collection>
+	</resultMap>
+	<resultMap extends="BaseResultMap" id="ResultMapWithBLOBs"
+		type="com.aladdin.model.entity.Model">
+		<result column="description" jdbcType="LONGVARCHAR" property="description" />
+	</resultMap>
+	<sql id="Base_Column_List"> 
+		a_models.id, a_models.code, a_models.name, abbreviation, brand, modelnumber, weight,
+		unit, category_id, a_models.style, color, length, width, height, a_models.type,
+		material, auto_apply, unitprice, comefrom, a_models.state, accessibility,
+		a_models.created_by, a_models.created_date, a_models.modified_by, a_models.modified_date, a_models.status,thumb,skp
+	</sql>
+
+	<select id="find" resultMap="ResultMapWithBLOBs">
+		select
+		<include refid="Base_Column_List"/>
+		from 
+		a_models 
+		<if test="params!=null and params.function !=null and params.function !=''">
+			left join a_model_functions on a_models.id = a_model_functions.model_id
+		</if>
+		where 
+		a_models.status = 1
+		and 
+		a_models.comefrom != 2
+		<if test="params!=null and params.brand !=null and params.brand !=''">
+			and brand = #{params.brand}
+		</if>
+		<if test="params!=null and params.categoryId !=null and params.categoryId !=''">
+			and category_id = #{params.categoryId}
+		</if>
+		<if test="params!=null and params.categoryId1 !=null and params.categoryId1 !=''">
+			and category_id1 = #{params.categoryId1}
+		</if>
+		<if test="params!=null and params.categoryId2 !=null and params.categoryId2 !=''">
+			and category_id2 = #{params.categoryId2}
+		</if>
+		<if test="params!=null and params.type !=null and params.type !=''">
+			and type = #{params.type}
+		</if>
+		<if test="params!=null and params.style !=null and params.style !=''">
+			and a_models.style = #{params.style}
+		</if>
+		<if test="params!=null and params.color !=null and params.color !=''">
+			and a_models.color = #{params.color}
+		</if>
+		<if test="params!=null and params.state !=null and params.state !=''">
+			and a_models.state = #{params.state}
+		</if>
+		<if test="params!=null and params.comefrom !=null and params.comefrom !=''">
+			and a_models.comefrom = #{params.comefrom}
+		</if>
+		<if test="params!=null and params.accessibility !=null and params.accessibility !=''">
+			and a_models.accessibility = #{params.accessibility}
+		</if>
+		<if test="params!=null and params.createdBy !=null and params.createdBy !=''">
+			and a_models.created_by = #{params.createdBy}
+		</if>
+		<if test="params!=null and params.keyword !=null and params.keyword !=''">
+			AND (
+				a_models.name LIKE CONCAT('%',#{params.keyword},'%')
+				OR
+				a_models.code
+				LIKE
+				CONCAT('%',#{params.keyword},'%')
+				OR
+				a_models.modelnumber
+				LIKE
+				CONCAT('%',#{params.keyword},'%')
+				)
+		</if>
+		<if test="params!=null and params.function !=null and params.function !=''">
+			and a_model_functions.function = #{params.function}
+		</if>
+		<if test="params!=null and params.sortRule !=null and params.sortRule !=''">
+			ORDER BY a_models.created_date ${params.sortRule}
+		</if>
+		<if test="pager!=null">
+			limit #{pager.startIndex},#{pager.pageSize}
+		</if>
+	</select>
+	<select id="count" resultType="Integer">
+		select
+		count(1)
+		from a_models
+		<if test="params!=null and params.function !=null and params.function !=''">
+			left join a_model_functions on a_models.id = a_model_functions.model_id
+		</if>
+		where 
+		status = 1
+		and 
+		a_models.comefrom != 2
+		<if test="params!=null and params.brand !=null and params.brand !=''">
+			and brand = #{params.brand}
+		</if>
+		<if test="params!=null and params.categoryId !=null and params.categoryId !=''">
+			and category_id = #{params.categoryId}
+		</if>
+		<if test="params!=null and params.categoryId1 !=null and params.categoryId1 !=''">
+			and category_id1 = #{params.categoryId1}
+		</if>
+		<if test="params!=null and params.categoryId2 !=null and params.categoryId2 !=''">
+			and category_id2 = #{params.categoryId2}
+		</if>
+		<if test="params!=null and params.type !=null and params.type !=''">
+			and type = #{params.type}
+		</if>
+		<if test="params!=null and params.style !=null and params.style !=''">
+			and style = #{params.style}
+		</if>
+		<if test="params!=null and params.color !=null and params.color !=''">
+			and color = #{params.color}
+		</if>
+		<if test="params!=null and params.state !=null and params.state !=''">
+			and state = #{params.state}
+		</if>
+		<if test="params!=null and params.comefrom !=null and params.comefrom !=''">
+			and a_models.comefrom = #{params.comefrom}
+		</if>
+		<if test="params!=null and params.accessibility !=null and params.accessibility !=''">
+			and accessibility = #{params.accessibility}
+		</if>
+		<if test="params!=null and params.createdBy !=null and params.createdBy !=''">
+			and created_by = #{params.createdBy}
+		</if>
+		<if test="params!=null and params.keyword !=null and params.keyword !=''">
+			AND (
+				a_models.name LIKE CONCAT('%',#{params.keyword},'%')
+				OR
+				a_models.code
+				LIKE
+				CONCAT('%',#{params.keyword},'%')
+				OR
+				a_models.modelnumber
+				LIKE
+				CONCAT('%',#{params.keyword},'%')
+				)
+		</if>
+		<if test="params!=null and params.function !=null and params.function !=''">
+			and a_model_functions.function = #{params.function}
+		</if>
+	</select>
+	<select id="findSingleModelById" parameterType="String" resultMap="RelationResultMap">
+		select * from a_models where id = #{id}
+	</select>
+</mapper>

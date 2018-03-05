@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.tongY_rule{
+    width: 310px;
+    height: 528px;
+    background: #fff;
+    border: solid 1px #eee;
+    margin: 20px auto;
+}
+.ty_header{
+    height: 43px;
+    line-height: 43px;
+    border-bottom: solid 1px #c0c0c0;
+}
+.ty_header p{
+    width: 66px;
+    background: url("../images/tongy_rule/rule_icon.png") 10px center no-repeat;
+    background-size: 18px 18px;
+    padding-left: 34px;
+    float: left;
+}
+.ty_header h2{
+    width: 66px;
+    background: url("../images/tongy_rule/new_icon.png") 16px center no-repeat;
+    background-size: 18px 18px;
+    padding-right: 10px;
+    text-align: right;
+    float: right;
+    cursor: pointer;
+}
+.tongY_content{
+    width: 310px;
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: solid 1px #dad8d8;
+    margin: 20px auto 0;
+}
+.tongY_content table{
+    width: 310px;
+
+    cursor: default;
+}
+.tongY_content table tr{
+    border-bottom: solid 1px #dad8d8;
+    height: 32px;
+}
+.tongY_content table tr.heading:hover{
+    background: #fff;
+}
+.tongY_content table tr:hover{
+    background: #f3f3f3;
+}
+.tongY_content table tr:hover td{
+    color: #727272;
+}
+.tongY_content table tr th{
+    text-align: center;
+    color:#7f7f7f;
+    font-weight:normal;
+}
+.tongY_content table tr td{
+    text-align: center;
+    color: #999999;
+}
+.tongY_content table td,th{
+    border-right:solid 1px #dad8d8;
+}
+.last_no{
+    border: none;
+}
+.tongY_content table tr td.editor{
+    cursor: pointer;
+}
+.tongY_content table tr td.editor img{
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+}
+.tongY_content table tr.rule{
+    cursor: pointer;
+
+}
+.tongY_content table tr td.rule img{
+    width: 14px;
+    height: 15px;
+    margin: 0 auto;
+}

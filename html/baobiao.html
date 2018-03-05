@@ -1,0 +1,724 @@
+﻿ <!DOCTYPE html>
+ <html>
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DIM报表</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+		<!--[if lt IE 9]>
+	      <script src="js/html5shiv.min.js"></script>
+	      <script src="js/respond.min.js"></script>
+	    <![endif]-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/intDOM.js" charset="utf-8"></script>
+    <script src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script src="js/module/skp/core.js" charset="utf-8"></script>
+    <script src="js/module/skp/skp.js" charset="utf-8"></script>
+    <script src="js/module/core/main.js" charset="utf-8"></script>
+    <script src="js/module/core/user.js" charset="utf-8"></script>
+    <script src="//cdn.bootcss.com/juicer/0.6.14/juicer-min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+	<link href="css/style.css" rel="stylesheet">
+		 <style>
+			 body{
+				 /*overflow: hidden;*/
+			 }
+			 table {
+				 border-right: solid 1px #f3f3f3;
+				 border-top: solid 1px #f3f3f3;
+				 width: 100%;
+				 margin: auto;
+			 }
+			 .container{
+			 	width:100% !important;
+			 }
+	
+			 th {
+				 background: #f3f3f3;
+				 padding: 10px;
+				 text-align: center;
+				 vertical-align: center;
+			 }
+	
+			 td {
+				 border-left: solid 1px #f3f3f3;
+				 border-bottom: solid 1px #f3f3f3;
+				 font-size: 10px;
+				 text-align: center;
+				 vertical-align: middle;
+			 }
+	
+			 .bnone {
+				 border-left: solid 1px #fff;
+				 border-right: solid 1px #fff;
+				 border-top: solid 1px #eee;
+				 font-weight: bold;
+				 font-size: 16pt;
+				 padding: 15px;
+				 text-align: left;
+			 }
+			 .plus{
+			 	color: #0080cc;
+			    font-size: 20px;
+			    width: 18px;
+			    height: 18px;
+			    border-radius: 9px;
+			    line-height: 12px;
+			    border: 2px #0080cc solid;
+			    display: inline-block;
+			 }
+			 .zi{
+		 	    font-size: 18px;
+			    color: #0080cc;
+			    padding-left: 4px;
+			 	}
+			 	.container{
+			 		padding:0;
+			 	}
+			 	body{
+			 	overflow:hidden;
+			 	}
+			 	.scroll, #myTabContent{
+			 		height:580px;
+			 		padding-bottom:80px;
+			 	}
+			 	
+			 	.mCSB_container{
+			 		position:relative;
+			 		padding-bottom:80px;
+			 	}
+		 </style>
+	 
+	</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h4 class="text-center">报表</h4>
+			<button style="margin:0 22px 0 4px;"  type="button" class="btn btn-primary btn-sm  pull-right " id="orderbtn">
+			  <span class="glyphicon glyphicon-download-alt "></span>一键下单
+			</button>
+			<button type="button" class="import btn btn-primary btn-sm  pull-right ">
+			  <span class="glyphicon glyphicon-download-alt "></span> 导出文件
+			</button>
+		
+		</div>
+	
+		<div id="baobiao">
+			<ul id="myTab" class="nav nav-tabs">
+			   <li class=""><a href="#zhb" data-toggle="tab" rel="0" aria-expanded="false">报价汇总表</a></li>
+			   <li class=""><a href="#zcl" data-toggle="tab" rel="1" aria-expanded="false">套餐外主材料增项明细报价表</a></li>
+			   <li class=""><a href="#bzsg" data-toggle="tab" rel="2" aria-expanded="false">套餐外标准施工增项报价表</a></li>
+			    <li class=""><a href="#yizx" data-toggle="tab" rel="3" aria-expanded="false">套餐外乙方增项明细报价表</a></li>
+			   <li class="active"><a href="#cbmx" data-toggle="tab" rel="4" aria-expanded="false">成本明细表</a></li>
+			   <li class=""><a href="#zcmx" rel="5" data-toggle="tab" aria-expanded="true">主材明细表</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content ">
+			   <div class="tab-pane fade" id="zhb">
+			      <div class="table-responsive scroll">
+					   <table class="table table-bordered baobiaotable">
+						  <tbody>
+							  <tr>
+							    <td width="13%"><strong>客户基本信息</strong></td>
+							    <td width="11%">客户姓名</td>
+							    <td width="24%">888888</td>
+							    <td colspan="2">联系电话</td>
+							    <td colspan="2">&nbsp;</td>
+							    <td width="10%">施工地址</td>
+							    <td width="10%">&nbsp;</td>
+							  </tr>
+							  <tr>
+							    <td><strong>施工单位信息</strong></td>
+							    <td>施工单位</td>
+							    <td>&nbsp;</td>
+							    <td>联系电话</td>
+							    <td>&nbsp;</td>
+							    <td width="6%">设计师</td>
+							    <td width="8%">&nbsp;</td>
+							    <td>联系电话</td>
+							    <td>&nbsp;</td>
+							  </tr>
+							  <tr>
+							    <td colspan="9"><h4 class="pull-left">（一）套餐总价</h4></td>
+							  </tr>
+							  <tr>
+							    <td><strong>套餐名称</strong></td>
+							    <td>单位（㎡）</td>
+							    <td>&nbsp;</td>
+							    <td width="8%">计价面积</td>
+							    <td width="10%">&nbsp;</td>
+							    <td>单价</td>
+							    <td>&nbsp;</td>
+							    <td>金额（元）</td>
+							    <td>&nbsp;</td>
+							  </tr>
+							  <tr>
+							    <td colspan="9"><h4 class="pull-left">（二）增项费用</h4></td>
+							  </tr>
+							  <tr>
+							    <td><strong>序号</strong></td>
+							    <td colspan="2"><strong>项目</strong></td>
+							    <td colspan="4"><strong>金额（元）</strong></td>
+							    <td colspan="2"><strong>备注</strong></td>
+							  </tr>
+							  <tr>
+							    <td>1</td>
+							    <td colspan="2">套餐外主材料增项报价（阿拉丁供应）</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">详见《套餐外增项明细及报价》</td>
+							  </tr>
+							  <tr>
+							    <td>2</td>
+							    <td colspan="2">套餐外标准施工增项报价</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">详见《套餐外增项明细及报价》</td>
+							  </tr>
+							  <tr>
+							    <td>3</td>
+							    <td colspan="2">套餐乙方增项报价</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">详见《套餐外增项明细及报价》</td>
+							  </tr>
+							  <tr>
+							    <td>4</td>
+							    <td colspan="2">增项总计：￥0.00</td>
+							    <td colspan="6"><span class="pull-left">大写：零元整</span></td>
+							  </tr>
+							  <tr>
+							    <td colspan="9"><h4 class="pull-left">（三）其他</h4></td>
+							  </tr>
+							  <tr>
+							    <td><strong>序号</strong></td>
+							    <td colspan="2"><strong>名称</strong></td>
+							    <td colspan="4"><strong>金额</strong></td>
+							    <td colspan="2"><strong>方式</strong></td>
+							  </tr>
+							  <tr>
+							    <td>1</td>
+							    <td colspan="2">设计费</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">由甲已方协商解决</td>
+							  </tr>
+							  <tr>
+							    <td>2</td>
+							    <td colspan="2">管理费</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">由甲已方协商解决</td>
+							  </tr>
+							  <tr>
+							    <td>3</td>
+							    <td colspan="2">搬运费</td>
+							    <td colspan="4">&nbsp;</td>
+							    <td colspan="2">电梯不可到达的辅材搬运费</td>
+							  </tr>
+							  <tr>
+							    <td>4</td>
+							    <td colspan="2">合同总价：￥0.00</td>
+							    <td colspan="6"><span class="pull-left">大写：零元整</span></td>
+							  </tr>
+							  <tr>
+							    <td>5</td>
+							    <td colspan="8"><span class="pull-left">备注：甲方如需开具发票，甲已方自行协商解决</span></td>
+							  </tr>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="col-md-4 pull-left">
+							<p>业主签字：</p>
+							<p>装修公司盖章：</p>
+							<p>日期：&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</p>
+						</div>
+						<div class="col-md-4 pull-left">
+							<p>设计师签字：</p>
+						</div>
+						<div class="col-md-4 pull-left">
+							<p>客户经理签字：</p>
+							<p>阿拉丁电商盖章：</p>
+							<p>日期：&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</p>
+						</div>
+					</div>
+			   	</div>
+			   </div>
+			   <div class="tab-pane fade" id="zcl">
+			       <div style=" padding: 0; " class="scroll">
+					<div class="h1">套餐外主材增项明细报价表</div>
+						<table >
+							<tbody class="html1">
+			 				<!-- tpl1 -->
+							</tbody>
+						</table>
+						<table class="table table-striped" style="margin-top: 50px;">
+							<tbody>
+								<tr>
+									<td colspan="4" id="totalAmount">主材增项统计：¥ <b style="color: #f00;">9,296.15</b></td>
+									<td colspan="4" id="totalAmountCN">大写：<b style="color: #f00;">玖仟贰佰玖拾陆元壹角伍分</b></td>
+								</tr>
+								<tr>
+									<td colspan="2">业主签字：</td>
+									<td colspan="2">设计师签字：</td>
+									<td colspan="2">客户经理签字：</td>
+									<td colspan="2">阿拉丁电商盖章：</td>
+								</tr>
+								<tr>
+									<td colspan="8" style="text-align: left;">日期：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			   </div>
+			   <div class="tab-pane fade" id="bzsg">
+					<div class="h1">套餐外标准施工增项报价表</div>
+			  			<table class="table">
+			  				<tbody  class="html2">
+							<!-- tpl2 -->
+							</tbody>
+			 			 </table>
+				  	<table class="table table-bordered baobiaotable01">
+					  <tbody>
+						  <tr>
+						    <td>主材料增项统计：￥0.00</td>
+						    <td>大写：零元整</td>
+						  </tr>
+						  <tr>
+						    <td>业主签字：</td>
+						    <td>设计师签字：</td>
+						  </tr>
+						  <tr>
+						    <td>客户经理签字：</td>
+						    <td>阿拉丁电商盖章：</td>
+						  </tr>
+						  <tr>
+						    <td colspan="2">日期：&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</td>
+						  </tr>
+					</tbody>
+				</table>
+			   </div>
+			   <div class="tab-pane fade" id="yizx">
+			
+			  <div style="padding: 0; width: 100%;" class="scroll">
+				<div class="h1">套餐外乙方增项明细报价表</div>
+						<table >
+							<tbody  class="html3">
+								<!-- tpl3 -->
+							</tbody>
+						</table>
+						<table  class="table table-striped" style="margin-top: 50px;">
+								<tbody>
+								<tr>
+									<td colspan="4" id="totalAmount">施工增项报价总计：<b style="color: #f00;">¥ 0.00</b></td>
+									<td colspan="4" id="totalAmountCN">大写：<b style="color: #f00;">零元整</b></td>
+								</tr>
+								<tr>
+									<td colspan="8">备注：甲方如需开具发票，甲乙双方自行协商解决。</td>
+								</tr>
+								<tr>
+									<td colspan="2">业主签字：</td>
+									<td colspan="2">设计师签字：</td>
+									<td colspan="2">客户经理签字：</td>
+									<td colspan="2">装饰公司盖章：</td>
+								</tr>
+								<tr>
+									<td colspan="8" style="text-align: left;">日期：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			   </div>
+			   <div class="tab-pane fade active in" id="cbmx">
+			      <div style=" padding: 0; width: 100%;" class="scroll">
+						<div class="h1">成本明细表</div>
+								<table id="costtable" style="width: 100%;">
+								<!-- 区域开始循环 -->
+							<!-- 判断该区域下是否有数据：工程节点下是否有数据 -->
+							<tbody  class="html4">
+							<!-- tpl4 -->	
+							</tbody>
+						</table>
+					</div>
+			   </div>
+			   <div class="tab-pane fade" id="zcmx">
+			       	<div style=" padding: 0; width: 100%;" class="scroll">
+						<div class="h1">主材明细表</div>
+						<table class="tableview">
+							<tbody  class="html5">
+							<!-- tpl5 -->
+							</tbody>
+						</table>
+					</div>
+			   </div>
+			</div>
+		</div>
+	</div>
+	<script id="tpl1" type="text/template">
+	{@each children as it,index}
+		<tr>
+			<td colspan="10" class="bnone">${it.zone}</td>
+		</tr>
+		<tr>
+			<th>品类</th>
+			<th>品牌</th>
+			<th>产品</th>
+			<th>型号</th>
+			<th>规格</th>
+			<th>单位</th>
+			<th>数量</th>
+			<th>单价</th>
+			<th>合计</th>
+			<th>备注</th>
+		</tr>
+		{@each it.children as ic,index}
+		<tr>
+			<td style="padding: 10px;">${ic.category}</td>
+			<td style="padding: 10px;">${ic.brand}</td>
+			<td style="padding: 10px;">${ic.name}</td>
+			<td style="padding: 10px;">${ic.product_mode}</td>
+			<td style="padding: 10px;">${ic.specification}</td>
+			<td style="padding: 10px;">${ic.unit}</td>
+			<td style="padding: 10px;">${ic.quantity}</td>
+			<td style="padding: 10px;">${ic.price}</td>
+			<td style="padding: 10px;">${ic.amount}</td>
+			<td style="padding: 10px;">${ic.remark}</td>
+		</tr>
+		{@/each}
+	<tr>
+
+	{@/each}
+	</script>
+	<script id="tpl2" type="text/template">
+	{@each children as it,index}
+  	<tr>
+		<th style="width: 50px;">序号</th>
+		<th style="width: 200px;">施工项目</th>
+		<th style="width: 100px;">单位</th>
+		<th style="width: 100px;">单价</th>
+		<th style="width: 100px;">计价面积</th>
+		<th style="width: 100px;">合计</th>
+		<th>施工说明</th>
+	</tr>
+		<span style="display:none;">${i=1}</span>
+		{@each it.children as ic,index}
+		<tr>
+			<td>${i}</td>
+			<td>${ic.name}</td>
+			<td>${ic.unit}</td>
+			<td>${ic.price}</td>
+			<td>${ic.area}</td>
+			<td>${ic.amount}</td>
+			<td>${ic.remark}</td>
+		</tr>
+		<span style="display:none;">${i++}</span>
+		{@/each}
+	<tr>
+
+	{@/each}
+	</script>
+	<script id="tpl3" type="text/template">
+	{@each children as it,index}
+		<tr>
+			<td colspan="7" class="bnone">${it.zone}</td>
+			<td colspan="1"><span class="plus">+</span><span class="zi">添加</span></td>
+		</tr>
+		<tr class="thead">
+			<th style="min-width: 50px;">序号</th>
+			<th style="min-width: 200px;">施工项目</th>
+			<th style="min-width: 50px;">单位</th>
+			<th style="min-width: 100px;">工程量</th>
+			<th style="min-width: 100px;">单价</th>
+			<th>施工说明</th>
+			<th>合计</th>
+			<th>属性</th>
+		</tr>
+				<span style="display:none;">${i=1}</span>
+				{@each it.children as ic,index}
+				<tr>
+					<td style="padding: 10px;">${i}</td>
+					<td style="padding: 10px;">${ic.name}</td>
+					<td style="padding: 10px;">${ic.unit}</td>
+					<td style="padding: 10px;">${ic.quantity}</td>
+					<td style="padding: 10px;">${ic.price}</td>
+					<td style="padding: 10px;">${ic.remark}</td>
+					<td style="padding: 10px;">${ic.amount}</td>
+					<td style="padding: 10px;">删除</td>
+				</tr>
+				<span style="display:none;">${i++}</span>
+				{@/each}
+			<tr>
+	{@/each}
+	</script>
+	<script id="tpl4" type="text/template">
+	{@each children as it,index}
+		<tr>
+			<td colspan="18" class="bnone">${it.zone}</td>
+		</tr>
+		<tr>
+			<th>序号</th>
+			<th>工程</th>
+			<th>施工项目</th>
+			<th>施工子项</th>
+			<th>工程量</th>
+			<th>单位</th>
+			<th>人工费</th>
+			<th>材料费</th>
+			<th>合计</th>
+			<th>备注</th>
+			<th>品牌</th>
+			<th style="width:80px;">型号</th>
+			<th>损耗率(%)</th>
+			<th>单价</th>
+			<th>小计</th>
+			<th>运费</th>
+			<th>安装费</th>
+			<th>合计</th>
+		</tr>
+		<span style="display:none;">
+		${aa=0}
+		${bb=0}
+		${cc=0}
+		${dd=0}
+		${vamount=0}
+		${one=0}
+		${two=0}
+		${three=0}
+		${four=0}
+		{@each it.children as ic,a}
+			{@each ic.children as il,b}
+				${one=one+il.product_amount}
+				${two=two+il.transport_expenses}
+				${three=three+il.install_expenses}
+				${four=four+il.product_amount}
+				{@each il.children as ii,c}
+					{@each ii.children as oo,d}
+						${vamount=vamount+oo.amount}
+						${aa++}
+					{@/each}
+					${bb++}
+				{@/each}
+				${cc++}
+			{@/each}
+			${dd++}
+		{@/each}
+		${i=1}
+		</span>
+		{@each it.children as ic,a}
+			{@each ic.children as il,b}
+				{@each il.children as ii,c}
+					{@each ii.children as oo,d}
+						<tr>
+							<td>${i}</td>
+							{@if d!==1000}
+                            <td rowspan="0" aa="${aa}" bb="${bb}" cc="${cc}" dd="${dd}" ><!--工程-->${ic.name}</td>
+							{@/if}
+							{@if c!==1000}
+                            <td rowspan="0" aa="${aa}" bb="${bb}" cc="${cc}" dd="${dd}"><!--施工项目-->${il.name}</td> 
+							{@/if}
+							<td><!--施工子项-->${oo.name}</td>
+							<td><!--施工子项-->${oo.workload}</td>
+							<td><!--施工子项-->${oo.unit}</td>
+							<td><!--施工子项-->${oo.unitprice_man}</td>
+							<td><!--施工子项-->${oo.unitprice_material}</td>
+							<td><!--单项合计-->${oo.amount}</td>
+							<td><!--备注111--><input value="${oo.remark}" class="updatable" style="width: 100%;"></td>
+							<td><!--部品-->${il.brandName}</td>
+							<td style="width:100px;"><!--部品-->${il.modelNumber}</td>
+							<td><!--部品-->${il.wastage_rate}</td>
+							<td><!--部品-->${il.price}</td>
+							<td><!--部品-->${il.product_amount}</td>
+							<td><!--部品-->${il.transport_expenses}</td>
+							<td><!--部品-->${il.install_expenses}</td>
+							<td><!--部品-->${il.product_amount}</td>
+						</tr>
+						<span style="display:none;">${i++}</span>
+					{@/each}
+				{@/each}
+			{@/each}
+		{@/each}
+	<tr class="summarize">
+		<td colspan="8" style="font-weight: bold; text-align: center;">小计</td>
+		<td>¥ ${vamount}</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>¥${one}</td>
+		<td>¥${two}</td>
+		<td>¥${three}</td>
+		<td>¥${four}</td>
+	</tr>
+{@/each}
+	</script>
+	<script id="tpl5" type="text/template">
+	{@each children as it,index}
+		<tr>
+			<td colspan="8" class="bnone" style="font-size: 16pt;">${it.zone}</td>
+		</tr>
+		<tr>
+			<th>品类</th>
+			<th>品牌</th>
+			<th>产品</th>
+			<th>型号</th>
+			<th>规格</th>
+			<th>单位</th>
+			<th>数量</th>
+			<th>单价</th>
+			<th>合计</th>
+			<th>备注</th>
+		</tr>
+		{@each it.children as ic,index}
+		<tr>
+			<td style="padding: 10px;">${ic.category}</td>
+			<td style="padding: 10px;">${ic.brand}</td>
+			<td style="padding: 10px;">${ic.name}</td>
+			<td style="padding: 10px;">${ic.product_mode}</td>
+			<td style="padding: 10px;">${ic.specification}</td>
+			<td style="padding: 10px;">${ic.unit}</td>
+			<td style="padding: 10px;">${ic.quantity}</td>
+			<td style="padding: 10px;">${ic.price}</td>
+			<td style="padding: 10px;">${ic.amount}</td>
+			<td style="padding: 10px;">${ic.remark}</td>
+		</tr>
+		{@/each}
+	<tr>
+
+	{@/each}
+	</script>				
+	<script type="text/javascript">
+		var IsmCustomScrollbar = false; 
+		var htmlData = {};	
+		var data = {};
+		data.packageId=location.search.split('=')[1]?location.search.split('=')[1]:'0e382321a0474cdea1693f5877637cdf';
+		var url=server_url+"/api/vi/project_report";
+		var packageName = [];
+		packageName[0] = 'reports_summary';//1
+		packageName[1] = 'reports_main_material_additions';//2
+		packageName[2] = 'reports_std_build_additions';//3
+		packageName[3] = 'reports_customer_build_additions';//4
+		packageName[4] = 'reports_cost';//5
+		packageName[5] = 'reports_main_material_details';//6
+		function getData(i){
+			$('#myTab li:eq('+i+') a').tab('show');
+			//alert(IsmCustomScrollbar);
+			if(i==0){
+				return;
+			}
+			//var obj = {"packageId":data.packageId,"name":packageName[i] };
+			var obj = {};
+			obj.packageId = data.packageId;
+			obj.name = packageName[i];
+	        $.fn.mypost(url,obj,getUserToken(),function(data){
+	            data = JSON.parse(data.data.jsonfile);
+	        	var tpl = $('#tpl'+i).html();
+	            var html = juicer(tpl, data);
+	            //$('table tbody').removeClass('html')
+	            //$('table:visible tbody')[0].setAttribute('class','html');
+	            $('.html'+i).html(html);
+	            if(i==4){
+	            	autoRowSpan(costtable,0,2);
+	            	autoRowSpan(costtable,0,1);
+	            }
+	        	setTimeout("toscroll();",500);
+
+	        }); 
+		}
+		//$(function () {
+	        //$.fn.mypost(url,obj,getUserToken(),function(response){
+	            //console.log(response);
+	           // var response = my_eval(response);
+	            //var tpl = document.getElementById('tpl').innerHTML;
+	            //var html = juicer(tpl, response);
+	            //document.getElementById('html').innerHTML = html;
+	        //});
+
+	
+			
+			//$('#myTab li:eq(4) a').tab('show');
+			//$('#myTab li a').on('shown.bs.tab', function (e) {
+				//destroy();
+				  //e.target // newly activated tab
+				  //e.relatedTarget // previous active tab
+				 // getData(parseInt(e.target.rel));
+				//})
+				$('#myTab li a').on('click',function(){
+					if(IsmCustomScrollbar){
+						destroy();	
+					}
+					var i = parseInt($(this).attr('rel'));
+					getData(i);
+				})
+			$('#myTab li:eq(4) a').tab('show');	
+			getData(4);	
+		//});
+		function autoRowSpan(tb,row,col) { 
+			var lastValue=""; 
+			var value=""; 
+			var pos=1; 
+			for(var i=row;i<tb.rows.length;i++){ 
+				if(tb.rows[i].cells[col]){
+					value = tb.rows[i].cells[col].innerText; 
+					if(lastValue == value && lastValue!=""){ 
+						tb.rows[i].deleteCell(col); 
+						tb.rows[i-pos].cells[col].rowSpan = tb.rows[i-pos].cells[col].rowSpan+1; 
+						pos++; 
+					}else{ 
+						lastValue = value; 
+						pos=1; 
+					}
+				}	
+			} 
+		}	
+		
+		function order(){
+			var url = server_url+"/api/order/order?access_token="+getUserToken();
+			var obj = {packageId:data.packageId}
+			$.ajax({  
+		        type:"POST",  
+		        url:url, 
+		        data:obj,
+		        success: function(rdata){
+		       		if(rdata&&rdata.code==200){
+		       			alert("一键下单成功！");
+		       			window.open("http://www.art1001.com/front/user/list","_blank");
+		       		}else if(typeof rdata ==="string"){
+		       				alert(rdata);
+		       		}else if(typeof rdata === "object"){
+		       				alert(rdata.msg)
+		       		}
+		        }  
+		    })
+		};
+		$("#orderbtn").on("click",order);
+		function toscroll(){
+			$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+			$.mCustomScrollbar.defaults.axis="yx"; //enable 2 axis scrollbars by default
+			IsmCustomScrollbar = mCustomScrollbar;
+			$('.scroll').mCustomScrollbar({theme:"minimal-dark"});
+		}
+		function destroy(){
+			$('.scroll').mCustomScrollbar('destroy');
+			IsmCustomScrollbar = false;
+		}
+		$('.import').on('click',function(){
+	        var obj = {};
+	        obj.packageId = location.search.split('=')[1]?location.search.split('=')[1]:'0e382321a0474cdea1693f5877637cdf';
+	    	var url = server_url+'/api/vi/project_report/excel';
+	        $.fn.mypost(url,obj,getUserToken(),function(response){
+	        	var response = my_eval(response);
+	        	window.open(response.data.excelUrl);
+				debugger;
+	        })
+			
+		});
+		$(window).resize(function () { 
+			debugger;
+			$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+			$.mCustomScrollbar.defaults.axis="y"; //enable 2 axis scrollbars by default
+			$('.scroll').mCustomScrollbar('destroy');	
+			$('.scroll').mCustomScrollbar({theme:"minimal-dark"});//当浏览器大小变化时
+			//$('.scroll').height(document.body.clientWidth-160);
+		});
+	</script>
+</body>
+</html>
